@@ -1,0 +1,98 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const video = {
+  title: 'Makoplasty Robotic Partial Knee Replacement',
+  vimeoId: '663434611',
+  category: 'Knee Procedures',
+  duration: '7:15',
+  surgeon: 'Kevin R. Stone, MD',
+  year: '2018',
+  location: 'San Francisco, CA'
+};
+---
+
+<Layout title={video.title}>
+  <section class="bg-stone-900 text-white py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <a href="/techniques" class="inline-flex items-center gap-2 text-stone-400 hover:text-white text-sm mb-6 transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Back to Surgical Techniques
+      </a>
+      <div class="flex items-center gap-3 mb-4">
+        <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-sm font-medium rounded-full">{video.category}</span>
+        <span class="text-stone-500">•</span>
+        <span class="text-stone-400 text-sm">{video.duration}</span>
+      </div>
+      <h1 class="font-display text-display-sm md:text-display-md text-white mb-4">{video.title}</h1>
+      <p class="text-stone-400">Performed by {video.surgeon} · {video.year} · {video.location}</p>
+    </div>
+  </section>
+
+  <section class="bg-stone-800 py-8">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="aspect-video relative rounded-sm overflow-hidden bg-stone-900">
+        <iframe src={`https://player.vimeo.com/video/${video.vimeoId}?h=0&title=0&byline=0&portrait=0`} class="absolute inset-0 w-full h-full" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-12">
+        <div class="md:col-span-1">
+          <div class="sticky top-24">
+            <h3 class="font-display text-lg text-stone-900 mb-4">Quick Facts</h3>
+            <dl class="space-y-4 text-sm">
+              <div><dt class="text-stone-500">Procedure Type</dt><dd class="font-medium text-stone-900">Robotic-Assisted Arthroplasty</dd></div>
+              <div><dt class="text-stone-500">Technology</dt><dd class="font-medium text-stone-900">Mako Robotic System</dd></div>
+              <div><dt class="text-stone-500">Implant</dt><dd class="font-medium text-stone-900">Unicompartmental</dd></div>
+              <div><dt class="text-stone-500">Indication</dt><dd class="font-medium text-stone-900">Isolated Compartment Arthritis</dd></div>
+            </dl>
+            <div class="mt-8 pt-8 border-t border-stone-200">
+              <h4 class="font-medium text-stone-900 mb-3">Patient Story</h4>
+              <p class="text-sm text-stone-600">This video features patient John Lyman, an Alaska ski instructor who returned to skiing within months of surgery.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:col-span-2">
+          <h2 class="font-display text-2xl text-stone-900 mb-6">Summary</h2>
+          <div class="prose prose-stone max-w-none mb-12">
+            <p>Makoplasty combines robotic precision with the surgeon's expertise for unicompartmental (partial) knee replacement. The Mako robotic system assists in precise bone preparation and implant positioning, preserving healthy tissue and ligaments.</p>
+            <h3>Advantages of Robotic Assistance</h3>
+            <p>The robotic system creates a 3D model of the patient's knee from CT imaging, allowing pre-operative planning and intra-operative guidance. The surgeon remains in control while the robot provides boundaries to prevent over-resection.</p>
+          </div>
+
+          <h2 class="font-display text-2xl text-stone-900 mb-6">Patient Transcript</h2>
+          <div class="bg-stone-50 rounded-sm p-6 md:p-8">
+            <div class="prose prose-stone prose-sm max-w-none">
+              <p class="text-stone-500 italic mb-4">[00:00] John Lyman, Patient</p>
+              <p>My name's John Lyman. I live in Alaska. Lived up there for about 45 years and spent most of my life out of doors. Ski instructor at Aspen. And wanted to get back to skiing again after my right knee pretty well wore out. Went to several different clinics and settled on Kevin Stone's clinic. And I've had a wonderful experience here. It's been painful, but it was wonderful. We ended up after trying some other things with a full replacement on my right knee three years ago. Did it on July 3rd. And the physical therapy was good enough that I was skiing on December 4th of the same year. Got 105 days in that year.</p>
+              
+              <p class="text-stone-500 italic mb-4 mt-6">[01:07]</p>
+              <p>This is three years later and I've worn out the cartilage behind my kneecap on my left knee. And it got to the point where Synvisc and hyaluronic solutions were no longer lubricating and it was affecting turn shape and I could not climb stairs, and it was very difficult to walk distances. So we came back for a double dose of Dr. Stone's clinic. And when we got here, we found out that a robot was going to assist Dr. Stone on the partial replacement of the patellofemoral. And I wanted to meet the robot. He seemed like a nice enough fellow—didn't say much, but he just stood there, very stoically.</p>
+              
+              <p>Had a very good experience with the operation. I like going away and coming back and having it done. And now we're in physical therapy. I trust these therapists. It's one of the reasons I come here. As much as I like Dr. Stone and what he does, this physical therapist team is by far the best I've ever worked with. And I've done a lot of PT working out of the woods. We'll see how this goes. We're in the second day. It's a little stiff. The robot grabbed a hold of my leg pretty tightly, and it's gonna be a few days before everything comes back. But looking at the pictures, and from my experience with the clinic before, I expect that I will get between 100 and 130 days of skiing this year. Wide open Aspen Snowmass. I'm looking forward to it.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-stone-100 py-8">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="flex justify-between items-center">
+        <a href="/techniques/knee-dislocation" class="text-stone-600 hover:text-stone-900 inline-flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          Knee Dislocation
+        </a>
+        <a href="/techniques/achilles-repair" class="text-blue-600 hover:text-blue-700 inline-flex items-center gap-2">
+          Next: Achilles Repair
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

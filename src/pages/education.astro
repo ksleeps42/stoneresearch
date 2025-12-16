@@ -1,0 +1,269 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const stats = [
+  { value: '83', label: 'Fellows & Interns', description: 'Trained since founding' },
+  { value: '25', label: 'Conferences Hosted', description: 'Annual meetings & symposia' },
+  { value: '4,000+', label: 'Transplants', description: 'Meniscus allografts since 1986' },
+  { value: '10+', label: 'Video Techniques', description: 'Surgical education library' },
+];
+---
+
+<Layout title="Education">
+  <!-- Hero -->
+  <section class="bg-stone-900 text-white py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-3xl">
+        <p class="text-accent-400 font-medium uppercase tracking-wider text-sm mb-4">
+          Training the Next Generation
+        </p>
+        <h1 class="font-display text-display-lg md:text-display-xl text-white mb-6">
+          Education
+        </h1>
+        <p class="text-xl text-stone-300 leading-relaxed">
+          Research is a powerful tool for enacting change through education. We are committed 
+          to expanding educational opportunities from a local to a global scale—training the 
+          next generation of pioneers in arthritis research.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Stats -->
+  <section class="py-12 bg-stone-50 border-b border-stone-200">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        {stats.map((stat) => (
+          <div class="text-center p-6 bg-white border border-stone-200 rounded-sm">
+            <div class="font-display text-3xl lg:text-4xl text-stone-900 mb-1">{stat.value}</div>
+            <div class="text-sm font-medium text-stone-700 uppercase tracking-wider mb-1">{stat.label}</div>
+            <div class="text-xs text-stone-400">{stat.description}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Internships -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-blue-600 text-sm font-medium rounded-full mb-4">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+            Internship Program
+          </div>
+          <h2 class="font-display text-display-md text-stone-900 mb-6">
+            Mentoring Future Leaders in Orthopaedic Science
+          </h2>
+          <p class="text-stone-600 leading-relaxed mb-4">
+            From our universally accessible and innovative surgical technique videos to our 
+            internship program designed to mentor students with a unique range of academic 
+            and personal backgrounds, we strive to provide opportunities to diversify the 
+            field of research through education and innovation.
+          </p>
+          <p class="text-stone-600 leading-relaxed mb-6">
+            The Stone Research Foundation and The Stone Clinic host US and international MDs, 
+            visiting scientists, medical and nursing students, and graduate and undergraduate 
+            students to provide comprehensive exposure to the techniques and methods that we 
+            have researched, developed, and continue to improve.
+          </p>
+          
+          <div class="bg-stone-50 border border-stone-200 p-6 rounded-sm mb-6">
+            <h3 class="font-medium text-stone-900 mb-3">Who We Host</h3>
+            <div class="grid grid-cols-2 gap-3 text-sm text-stone-600">
+              <div class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                US & International MDs
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                Visiting Scientists
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                Medical Students
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                Nursing Students
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                Graduate Students
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                Undergraduate Students
+              </div>
+            </div>
+          </div>
+          
+          <a 
+            href="mailto:research@stoneclinic.com?subject=Internship%20Inquiry" 
+            class="btn-primary"
+          >
+            Apply for an Internship
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+        
+        <div class="relative">
+          <div class="bg-gradient-to-br from-blue-500 to-blue-600 rounded-sm p-8 text-white">
+            <svg class="w-12 h-12 mb-6 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+            <h3 class="font-display text-2xl mb-4">83 Fellows & Interns Trained</h3>
+            <p class="text-blue-100 leading-relaxed mb-6">
+              We are actively involved in hosting annual meetings to connect with international 
+              thought leaders while supporting our interns who are the next generation of 
+              physicians and researchers.
+            </p>
+            <div class="border-t border-blue-400/30 pt-4">
+              <p class="text-sm text-blue-200">
+                Including our newest SRF Fellow: <span class="text-white font-medium">Yalnaz Mohasin, MD</span> 
+                at the Feinstein Institutes for Medical Research
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Associations -->
+  <section class="py-16 md:py-24 bg-stone-900 text-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/10 text-accent-400 text-sm font-medium rounded-full mb-4">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+          </svg>
+          Scientific Associations
+        </div>
+        <h2 class="font-display text-display-md text-white mb-4">
+          Meniscus Transplant Study Group
+        </h2>
+        <div class="w-16 h-px bg-accent-400 mx-auto"></div>
+      </div>
+      
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-stone-800/50 border border-stone-700 rounded-sm p-8 md:p-10">
+          <div class="flex items-start gap-4 mb-6">
+            <div class="w-12 h-12 bg-accent-500 rounded-sm flex items-center justify-center flex-shrink-0">
+              <span class="font-display text-xl text-white">M</span>
+            </div>
+            <div>
+              <h3 class="font-display text-xl text-white mb-1">MTSG</h3>
+              <p class="text-stone-400 text-sm">Founded 1986 • Dr. Kevin Stone, Founding Member</p>
+            </div>
+          </div>
+          
+          <p class="text-stone-300 leading-relaxed mb-6">
+            The Meniscus Cartilage Transplantation Study Group (MTSG) was formed in 1986 by a 
+            combination of orthopaedic surgeons, veterinary surgeons, and scientists to help 
+            promote the science of meniscus cartilage transplantation and to evaluate its 
+            transfer from basic science research to clinical practice.
+          </p>
+          
+          <p class="text-stone-300 leading-relaxed mb-8">
+            The Stone Research Foundation is a driving force behind the MTSG—hosting, facilitating, 
+            and funding the meeting held in conjunction with the annual meeting of the American 
+            Academy of Orthopaedic Surgeons (AAOS). The group has now expanded to include the 
+            European Meniscal Transplantation Group (EMTG).
+          </p>
+          
+          <div class="grid md:grid-cols-3 gap-6 pt-6 border-t border-stone-700">
+            <div class="text-center">
+              <div class="font-display text-3xl text-accent-400 mb-1">4,000+</div>
+              <div class="text-sm text-stone-400">Human Allografts Transplanted</div>
+            </div>
+            <div class="text-center">
+              <div class="font-display text-3xl text-accent-400 mb-1">1986</div>
+              <div class="text-sm text-stone-400">Year Founded</div>
+            </div>
+            <div class="text-center">
+              <div class="font-display text-3xl text-accent-400 mb-1">2</div>
+              <div class="text-sm text-stone-400">International Groups (MTSG + EMTG)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Surgical Techniques Link -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <a href="/techniques" class="block group">
+        <div class="bg-gradient-to-br from-stone-900 to-stone-800 rounded-sm overflow-hidden">
+          <div class="grid md:grid-cols-2 gap-8 p-8 md:p-12 items-center">
+            <div>
+              <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/10 text-accent-400 text-sm font-medium rounded-full mb-4">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                </svg>
+                Video Library
+              </div>
+              <h2 class="font-display text-display-sm md:text-display-md text-white mb-4 group-hover:text-accent-300 transition-colors">
+                Surgical Techniques
+              </h2>
+              <p class="text-stone-300 leading-relaxed mb-6">
+                An educational video collection of innovative orthopaedic procedures performed 
+                by Kevin R. Stone, MD. Advancing the science of biologic and robotic surgery 
+                for orthopaedists worldwide.
+              </p>
+              <div class="flex items-center gap-6 text-sm">
+                <div class="flex items-center gap-2 text-emerald-400">
+                  <span class="font-medium">8</span>
+                  <span class="text-stone-400">Knee Procedures</span>
+                </div>
+                <div class="flex items-center gap-2 text-blue-400">
+                  <span class="font-medium">2</span>
+                  <span class="text-stone-400">Ankle Procedures</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-center md:justify-end">
+              <div class="w-24 h-24 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-accent-500 transition-colors">
+                <svg class="w-12 h-12 text-white ml-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white/5 px-8 md:px-12 py-4 flex items-center justify-between">
+            <span class="text-stone-400 text-sm">Explore all surgical technique videos</span>
+            <svg class="w-5 h-5 text-accent-400 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+  
+  <!-- CTA -->
+  <section class="bg-accent-500 text-white py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+        <div>
+          <h2 class="font-display text-2xl md:text-3xl text-white mb-2">Join Our Educational Mission</h2>
+          <p class="text-accent-100">Help us train the next generation of orthopaedic innovators.</p>
+        </div>
+        <div class="flex gap-4">
+          <a href="mailto:research@stoneclinic.com" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-accent-600 font-medium hover:bg-accent-50 transition-colors whitespace-nowrap">
+            Contact Us
+          </a>
+          <a href="/donate" class="inline-flex items-center gap-2 px-6 py-3 border-2 border-white text-white font-medium hover:bg-white/10 transition-colors whitespace-nowrap">
+            Support SRF
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

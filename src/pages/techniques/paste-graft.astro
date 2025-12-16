@@ -1,0 +1,192 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const video = {
+  title: 'Articular Cartilage Paste Graft',
+  vimeoId: '663421019',
+  category: 'Knee Procedures',
+  duration: '4:30',
+  surgeon: 'Kevin R. Stone, MD',
+  year: '2014',
+  location: 'San Francisco, CA'
+};
+---
+
+<Layout title={video.title}>
+  <!-- Hero -->
+  <section class="bg-stone-900 text-white py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <a href="/techniques" class="inline-flex items-center gap-2 text-stone-400 hover:text-white text-sm mb-6 transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+        Back to Surgical Techniques
+      </a>
+      
+      <div class="flex items-center gap-3 mb-4">
+        <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-sm font-medium rounded-full">
+          {video.category}
+        </span>
+        <span class="text-stone-500">•</span>
+        <span class="text-stone-400 text-sm">{video.duration}</span>
+      </div>
+      
+      <h1 class="font-display text-display-sm md:text-display-md text-white mb-4">
+        {video.title}
+      </h1>
+      
+      <p class="text-stone-400">
+        Performed by {video.surgeon} · {video.year} · {video.location}
+      </p>
+    </div>
+  </section>
+
+  <!-- Video Player -->
+  <section class="bg-stone-800 py-8">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="aspect-video relative rounded-sm overflow-hidden bg-stone-900">
+        <iframe 
+          src={`https://player.vimeo.com/video/${video.vimeoId}?h=0&title=0&byline=0&portrait=0`}
+          class="absolute inset-0 w-full h-full"
+          frameborder="0" 
+          allow="autoplay; fullscreen; picture-in-picture" 
+          allowfullscreen
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Summary & Transcript -->
+  <section class="py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-12">
+        <!-- Sidebar -->
+        <div class="md:col-span-1">
+          <div class="sticky top-24">
+            <h3 class="font-display text-lg text-stone-900 mb-4">Quick Facts</h3>
+            <dl class="space-y-4 text-sm">
+              <div>
+                <dt class="text-stone-500">Procedure Type</dt>
+                <dd class="font-medium text-stone-900">Cartilage Restoration</dd>
+              </div>
+              <div>
+                <dt class="text-stone-500">Graft Source</dt>
+                <dd class="font-medium text-stone-900">Autologous (Intercondylar Notch)</dd>
+              </div>
+              <div>
+                <dt class="text-stone-500">Technique</dt>
+                <dd class="font-medium text-stone-900">Arthroscopic, Single-Stage</dd>
+              </div>
+              <div>
+                <dt class="text-stone-500">First Developed</dt>
+                <dd class="font-medium text-stone-900">1991</dd>
+              </div>
+              <div>
+                <dt class="text-stone-500">Published Follow-up</dt>
+                <dd class="font-medium text-stone-900">Up to 23 years</dd>
+              </div>
+            </dl>
+            
+            <div class="mt-8 pt-8 border-t border-stone-200">
+              <h4 class="font-medium text-stone-900 mb-3">Related Research</h4>
+              <a href="/research/articular-cartilage" class="text-sm text-emerald-600 hover:text-emerald-700 flex items-center gap-1">
+                View Cartilage Studies
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="md:col-span-2">
+          <h2 class="font-display text-2xl text-stone-900 mb-6">Summary</h2>
+          
+          <div class="prose prose-stone max-w-none mb-12">
+            <p>
+              Articular cartilage paste grafting is a technique developed by Dr. Stone in 1991 to 
+              replace arthritic surfaces in the knee joint. This single-stage, arthroscopic procedure 
+              uses the patient's own cartilage and bone to regenerate damaged joint surfaces.
+            </p>
+            
+            <h3>The Technique</h3>
+            <p>
+              The knee joint has two types of cartilage: articular cartilage (the covering on the 
+              end of the bone) and meniscus cartilage (the shock absorber). When the joint becomes 
+              arthritic, the articular cartilage wears down to bone. The paste graft technique 
+              addresses this by creating a regenerative environment.
+            </p>
+            <p>
+              First, the arthritic surface is prepared by creating small holes to release marrow 
+              cells from the bone. Articular cartilage and underlying cancellous bone are then 
+              harvested from the intercondylar notch where they're not needed, morselized into a 
+              paste containing marrow stem cells, and packed onto the prepared surface.
+            </p>
+
+            <h3>Long-Term Results</h3>
+            <p>
+              Published data on 125 patients with 2-12 year follow-up demonstrated strong cartilage 
+              regeneration. Patients have now been followed for more than 17 years, continuing to 
+              play sports on paste-grafted surfaces with excellent pain relief.
+            </p>
+          </div>
+
+          <h2 class="font-display text-2xl text-stone-900 mb-6">Transcript</h2>
+          
+          <div class="bg-stone-50 rounded-sm p-6 md:p-8">
+            <div class="prose prose-stone prose-sm max-w-none">
+              <p class="text-stone-500 italic mb-4">[00:01]</p>
+              <p>
+                Here we demonstrate a medial femoral condylar lesion in an athletic bicycle racer. 
+                The lesion is mortalized with a chondral awl to create a bloody bed. This lesion 
+                had been present for years and had stopped him from participating in bicycle racing. 
+                He had previously undergone a medial menisectomy, which most likely contributed to 
+                the degeneration of this medial femoral condyle.
+              </p>
+              
+              <p>
+                The dead areas of bone are removed with the arthroscope. The lesion is shaved to 
+                remove loose pieces of cartilage. Care is taken to ensure that a bloody bed is created.
+              </p>
+              
+              <p>
+                Graft is harvested with a rongeur from the intercondylar notch, taking care to 
+                capture a small amount of articular cartilage and underlying bone. The graft is 
+                taken out of the knee, formed into a paste, and then impacted into the lesion 
+                with the rongeur.
+              </p>
+              
+              <p class="text-stone-500 italic mb-4 mt-6">[01:16]</p>
+              <p>
+                No effort is made to completely fill the lesion as these usually hypertrophy 
+                during the healing phase. Loose pieces that fall off into the joint are removed 
+                with an arthroscopic grasper.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Navigation -->
+  <section class="bg-stone-100 py-8">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="flex justify-between items-center">
+        <a href="/techniques/acl-reconstruction" class="text-stone-600 hover:text-stone-900 inline-flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+          ACL Reconstruction
+        </a>
+        <a href="/techniques/lateral-meniscus" class="text-emerald-600 hover:text-emerald-700 inline-flex items-center gap-2">
+          Next: Lateral Meniscus
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

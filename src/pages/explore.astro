@@ -1,0 +1,322 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Explore" description="Discover all Stone Research Foundation resources">
+  <!-- Hero -->
+  <section class="bg-stone-900 text-white py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-3xl">
+        <h1 class="font-display text-display-lg md:text-display-xl text-white mb-6">
+          Explore
+        </h1>
+        <p class="text-xl text-stone-300 leading-relaxed">
+          Discover 30+ years of orthopaedic research, surgical innovations, and educational resources 
+          from the Stone Research Foundation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Research Library -->
+        <div class="bg-white border border-stone-200 rounded-sm overflow-hidden group hover:shadow-lg transition-shadow">
+          <div class="bg-stone-900 px-6 py-5">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-white/10 rounded-sm flex items-center justify-center">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                </svg>
+              </div>
+              <h2 class="font-display text-xl text-white">Research Library</h2>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="text-stone-600 text-sm mb-6">Peer-reviewed publications on biologic joint repair techniques.</p>
+            <ul class="space-y-3">
+              <li>
+                <a href="/research" class="flex items-center justify-between text-stone-700 hover:text-accent-500 transition-colors group/link">
+                  <span class="font-medium">All Research</span>
+                  <svg class="w-4 h-4 text-stone-400 group-hover/link:text-accent-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="/research/articular-cartilage" class="flex items-center justify-between text-stone-600 hover:text-accent-500 transition-colors group/link">
+                  <span>Articular Cartilage</span>
+                  <span class="text-xs text-stone-400">4 studies</span>
+                </a>
+              </li>
+              <li>
+                <a href="/research/meniscus" class="flex items-center justify-between text-stone-600 hover:text-accent-500 transition-colors group/link">
+                  <span>Meniscus</span>
+                  <span class="text-xs text-stone-400">4 studies</span>
+                </a>
+              </li>
+              <li>
+                <a href="/research/ligaments" class="flex items-center justify-between text-stone-600 hover:text-accent-500 transition-colors group/link">
+                  <span>Ligaments & Tendons</span>
+                  <span class="text-xs text-stone-400">2 studies</span>
+                </a>
+              </li>
+              <li>
+                <a href="/research/anabolic-therapies" class="flex items-center justify-between text-stone-600 hover:text-accent-500 transition-colors group/link">
+                  <span>Anabolic Therapies</span>
+                  <span class="text-xs text-stone-400">2 studies</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Video Library -->
+        <div class="bg-white border border-stone-200 rounded-sm overflow-hidden group hover:shadow-lg transition-shadow">
+          <div class="bg-accent-500 px-6 py-5">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-white/20 rounded-sm flex items-center justify-center">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <h2 class="font-display text-xl text-white">Video Library</h2>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="text-stone-600 text-sm mb-6">27+ videos covering surgical techniques, education, and patient stories.</p>
+            <ul class="space-y-3">
+              <li>
+                <a href="/videos" class="flex items-center justify-between text-stone-700 hover:text-accent-500 transition-colors group/link">
+                  <span class="font-medium">Browse All Videos</span>
+                  <svg class="w-4 h-4 text-stone-400 group-hover/link:text-accent-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="/videos#surgical-techniques" class="flex items-center justify-between text-stone-600 hover:text-accent-500 transition-colors">
+                  <span>Surgical Techniques</span>
+                  <span class="text-xs text-stone-400">9 videos</span>
+                </a>
+              </li>
+              <li>
+                <a href="/videos#educational" class="flex items-center justify-between text-stone-600 hover:text-accent-500 transition-colors">
+                  <span>Educational Overviews</span>
+                  <span class="text-xs text-stone-400">8 videos</span>
+                </a>
+              </li>
+              <li>
+                <a href="/videos#presentations" class="flex items-center justify-between text-stone-600 hover:text-accent-500 transition-colors">
+                  <span>Presentations & Lectures</span>
+                  <span class="text-xs text-stone-400">5 videos</span>
+                </a>
+              </li>
+              <li>
+                <a href="/videos#patient-stories" class="flex items-center justify-between text-stone-600 hover:text-accent-500 transition-colors">
+                  <span>Patient Experiences</span>
+                  <span class="text-xs text-stone-400">4 videos</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Surgical Techniques -->
+        <div class="bg-white border border-stone-200 rounded-sm overflow-hidden group hover:shadow-lg transition-shadow">
+          <div class="bg-emerald-600 px-6 py-5">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-white/20 rounded-sm flex items-center justify-center">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                </svg>
+              </div>
+              <h2 class="font-display text-xl text-white">Surgical Techniques</h2>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="text-stone-600 text-sm mb-6">Detailed surgical videos with summaries and full transcripts.</p>
+            <ul class="space-y-3">
+              <li>
+                <a href="/techniques" class="flex items-center justify-between text-stone-700 hover:text-accent-500 transition-colors group/link">
+                  <span class="font-medium">All Techniques</span>
+                  <svg class="w-4 h-4 text-stone-400 group-hover/link:text-accent-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              </li>
+              <li class="pt-2 border-t border-stone-100">
+                <span class="text-xs text-stone-400 uppercase tracking-wider">Knee Procedures</span>
+              </li>
+              <li>
+                <a href="/techniques/acl-reconstruction" class="text-stone-600 hover:text-accent-500 transition-colors text-sm">
+                  ACL Reconstruction
+                </a>
+              </li>
+              <li>
+                <a href="/techniques/paste-graft" class="text-stone-600 hover:text-accent-500 transition-colors text-sm">
+                  Articular Cartilage Paste Graft
+                </a>
+              </li>
+              <li>
+                <a href="/techniques/medial-meniscus" class="text-stone-600 hover:text-accent-500 transition-colors text-sm">
+                  Meniscus Transplantation
+                </a>
+              </li>
+              <li>
+                <a href="/techniques/makoplasty" class="text-stone-600 hover:text-accent-500 transition-colors text-sm">
+                  Robotic Knee Replacement
+                </a>
+              </li>
+              <li class="pt-2 border-t border-stone-100">
+                <span class="text-xs text-stone-400 uppercase tracking-wider">Ankle Procedures</span>
+              </li>
+              <li>
+                <a href="/techniques/achilles-repair" class="text-stone-600 hover:text-accent-500 transition-colors text-sm">
+                  Achilles Tendon Repair
+                </a>
+              </li>
+              <li>
+                <a href="/techniques/ankle-ligament" class="text-stone-600 hover:text-accent-500 transition-colors text-sm">
+                  Ankle Ligament Repair
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="bg-white border border-stone-200 rounded-sm overflow-hidden group hover:shadow-lg transition-shadow">
+          <div class="bg-blue-600 px-6 py-5">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-white/20 rounded-sm flex items-center justify-center">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                </svg>
+              </div>
+              <h2 class="font-display text-xl text-white">Education</h2>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="text-stone-600 text-sm mb-6">Training programs and the Meniscal Transplant Study Group.</p>
+            <ul class="space-y-3">
+              <li>
+                <a href="/education" class="flex items-center justify-between text-stone-700 hover:text-accent-500 transition-colors group/link">
+                  <span class="font-medium">Education Overview</span>
+                  <svg class="w-4 h-4 text-stone-400 group-hover/link:text-accent-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="/education#internships" class="flex items-center justify-between text-stone-600 hover:text-accent-500 transition-colors">
+                  <span>Internship Program</span>
+                  <span class="text-xs text-stone-400">83 trained</span>
+                </a>
+              </li>
+              <li>
+                <a href="/education#mtsg" class="flex items-center justify-between text-stone-600 hover:text-accent-500 transition-colors">
+                  <span>MTSG</span>
+                  <span class="text-xs text-stone-400">Since 1986</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Foundation -->
+        <div class="bg-white border border-stone-200 rounded-sm overflow-hidden group hover:shadow-lg transition-shadow">
+          <div class="bg-amber-600 px-6 py-5">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-white/20 rounded-sm flex items-center justify-center">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                </svg>
+              </div>
+              <h2 class="font-display text-xl text-white">Foundation</h2>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="text-stone-600 text-sm mb-6">Support our mission to advance biologic joint repair.</p>
+            <ul class="space-y-3">
+              <li>
+                <a href="/donors" class="flex items-center justify-between text-stone-700 hover:text-accent-500 transition-colors group/link">
+                  <span class="font-medium">Friends of the Foundation</span>
+                  <svg class="w-4 h-4 text-stone-400 group-hover/link:text-accent-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://stoneresearch.org/donate" class="flex items-center justify-between text-stone-600 hover:text-accent-500 transition-colors">
+                  <span>Make a Donation</span>
+                  <svg class="w-4 h-4 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://stoneresearch.org" class="flex items-center justify-between text-stone-600 hover:text-accent-500 transition-colors">
+                  <span>Main Website</span>
+                  <svg class="w-4 h-4 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="bg-gradient-to-br from-stone-800 to-stone-900 text-white rounded-sm overflow-hidden">
+          <div class="p-6">
+            <h2 class="font-display text-xl text-white mb-6">By The Numbers</h2>
+            <div class="grid grid-cols-2 gap-6">
+              <div>
+                <div class="font-display text-3xl text-accent-400">58</div>
+                <div class="text-xs text-stone-400 uppercase tracking-wider">Publications</div>
+              </div>
+              <div>
+                <div class="font-display text-3xl text-accent-400">145</div>
+                <div class="text-xs text-stone-400 uppercase tracking-wider">Presentations</div>
+              </div>
+              <div>
+                <div class="font-display text-3xl text-accent-400">83</div>
+                <div class="text-xs text-stone-400 uppercase tracking-wider">Fellows Trained</div>
+              </div>
+              <div>
+                <div class="font-display text-3xl text-accent-400">30+</div>
+                <div class="text-xs text-stone-400 uppercase tracking-wider">Years Research</div>
+              </div>
+              <div>
+                <div class="font-display text-3xl text-accent-400">4,000+</div>
+                <div class="text-xs text-stone-400 uppercase tracking-wider">MTSG Transplants</div>
+              </div>
+              <div>
+                <div class="font-display text-3xl text-accent-400">$2M+</div>
+                <div class="text-xs text-stone-400 uppercase tracking-wider">Grants Funded</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-stone-100 py-16">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="font-display text-2xl text-stone-900 mb-4">Can't find what you're looking for?</h2>
+      <p class="text-stone-600 mb-8">We're always adding new content. Check back soon or reach out to learn more.</p>
+      <a href="https://stoneresearch.org/contact" class="btn-primary">
+        Contact Us
+      </a>
+    </div>
+  </section>
+</Layout>

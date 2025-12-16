@@ -1,0 +1,391 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const donorTiers = [
+  {
+    level: '$500,000+',
+    name: 'Visionary Donors',
+    donors: ['Rick & Rose Kimball', 'Mike & Judy Miller']
+  },
+  {
+    level: '$100,000 – $499,999',
+    name: 'Leadership Circle',
+    donors: [
+      'Kevin & Susan Stone', 'Mark & Laura Bailey', 'Greg & Jane Widroe', 'Chris & Ross Hartley',
+      'Kenneth & Anna Zankel', 'Jennifer & Bill Brinkley', 'Daniel Auerbach', 'David Pottruck',
+      "D'Arcy Roche & Stephanie Twomey", 'Jill & Nicholas Woodman Foundation', 'Timothy D. Strickler',
+      'George Jewett', 'Brian Hinchcliffe', 'Herb & Dawn Madan', "Thomas & Gay O'Neal",
+      'Byron & Anita Wien', 'Paul & Elle Stephens', 'Raymond & Helen Kwok'
+    ]
+  },
+  {
+    level: '$50,000 – $99,999',
+    name: 'Benefactors',
+    donors: ['Neil Armstrong', 'Dick Williams', 'Art Gensler', 'Brett Torino', 'Lee Benson', 'Terry Otton']
+  },
+  {
+    level: '$25,000 – $49,999',
+    name: 'Partners',
+    donors: [
+      'Lois & Steve Chess', 'Leon & Enna Kutz', 'Michael & Huan Linnan', 'Steve Tomlinson',
+      'Henry Marks', 'Chris McCutcheon', 'Lee Blaugrund', 'Vinod Khosla', 'Jonathan Siegal',
+      'Ken Hurst', 'Christine Mason', 'Crickette Brown Glad', 'Karen Richardson & Jon Rubenstein',
+      'Hugo Quackenbush'
+    ]
+  },
+  {
+    level: '$10,000 – $24,999',
+    name: 'Patrons',
+    donors: [
+      'Suwanna Gauntlett', 'Will Weinstein', 'Dr. Ara & Liana Karamanian', 'Edwin Knetzger',
+      'Jim & Rebecca Morgan', 'Nick & Natalie Weeks', 'Richard Rogers', 'Patterson Family Foundation',
+      'John & Marie Zderic', 'Dexter & Susan Paine', 'Lisle & Roslyn Payne', 'Bill Brougher',
+      'Philip Sienna', 'Simon Greenshields', 'Galen Miler', 'Bippy Siegal', 'Clark Ohrstrom',
+      'Daniel & Jane Cohen', 'Scott Russell', 'Audrey Blum', 'David & Anne Mills', 'Jean H. Comer',
+      'Lynn & Kevin Reedy', 'Thomas Goodrich'
+    ]
+  },
+  {
+    level: '$5,000 – $9,999',
+    name: 'Advocates',
+    donors: [
+      'Michael Jabara', 'Blair LaCorte', 'Michelle & Robert Friend', 'Donald Hunt',
+      'Joanna Miller', 'Lee Allen & Linda Graber', 'Meredith Machovoe', 'Robert Tong & Darlene Kitajima'
+    ]
+  },
+  {
+    level: '$1,000 – $4,999',
+    name: 'Supporters',
+    donors: [
+      'Dave Canepa', 'Howard & Virgina Williamson', 'William Parrish', 'Kathryn Harris',
+      'Andrea Wilder', 'Fred & Victoria Verhey', 'Ken Sneddon', 'Craig & Donna Forte',
+      'Ahmed Ali Babar', 'Howard Sawada', 'Gary Haber', 'Richard and Karen Lefurgy',
+      'Ann Cork', 'David Dignam', 'Josephine & Allen Cohen', 'Sheron Landis', 'Steve Latta',
+      'Paula Machado', 'Robert Townsend', 'Bill & Suzanne Shaw', 'Henrik Jones',
+      'Charles & Gerry Jennings', 'Mark & Joan Lappin', 'Howard & Mary Lester',
+      'Bill & Jaynie Kind', 'Andrew & Elise Hall', 'Frank Huerta', 'George Novogroder',
+      'Jane Metcalfe', 'John Rosenkrans', 'Lars Brauer', 'Maria Nishi', 'Martin Dunn',
+      'Michael Davies', 'Patrick Meehan', 'Sandra & George Sprenkle', 'Tim Brosnan',
+      'Tim Datels', 'William Gradin', 'V-nee Yeh', 'John Ware', 'Michael & Suzanne Tennenbaum',
+      'Claudia Engelhorn', 'Chris Newhard', 'Deborah & Joel Skidmore', 'John & Rhonda Luongo',
+      'Mark Fragnoli', 'Michael & Gina Jones', 'Mark Miller', 'Ann & Robert Hunter',
+      'Cheryl & Phil Genet', 'Frank B. Marks', 'Kevin Schneider', 'Leslie Underhill & Will Hendricks',
+      'Daniel & Judith Fetsch', 'James Fullerton', 'Ofer Saidoff', 'Tom Loscalzo',
+      'Edward Watson', 'Maggie Chestney', 'Craig Williams', 'David Yeske', 'Emeric McDonald',
+      'Howard Wechsler', 'Jan Sundt', 'John Nelson', 'Kathleen Bole & Paul Klingenstein',
+      'Lani Smith', 'Lenny and Erin Barshack', 'Leo & Katrinka McCallum',
+      'Lloyd & Bonnie Gustufson', 'Martin Selig', "Michael & Patricia O'Neill",
+      'Milsal McCaul', 'Otto & Yvonne Tschundi', 'Peggy McNaughten', 'Robert & Christina Morris',
+      'Stan Dull', 'Steven Sukstorf', 'Thomas Butler'
+    ]
+  },
+  {
+    level: '$500 – $999',
+    name: 'Friends',
+    donors: [
+      'Scott Mefford', 'Mill Valley Market', 'Peter Flemming Cronin', 'Dalton Martin',
+      'James Hicks', 'Lewis Levey', 'Nicki Theodorou', 'Gerard & Stacie Zell', 'Gordon Tait',
+      'John & Vicki Kryzanowski', 'Jim & Brenda Seaton', 'Rebecca Faeder', 'Bill Kimpton',
+      'David Gosstola', 'Frank Ding', 'John Crues', 'Matt Matthews',
+      'George Henschke & Catherine Deangelis', 'Brian & Ann Walgenbach', 'Deanna Smith',
+      'Donald Harty', 'Eileen Moser', 'Elena Mills', 'Erica Stumvoll-Wiley', 'Heidi Nolte',
+      'James Naftzger', 'Jane Dulay', 'Joao Miguel Jnr.', 'Joseph & Lisa Korzenecki',
+      'Julian Bahch', 'Leo Hourvitz', 'Lewis Woods', 'Lisa Conte', 'Michael & Marla Riley',
+      'Michal Staninec', 'Mike Dritz', 'Paul Harness', 'Peter Palmisano', 'Ruth Sundt',
+      'Stan Horn', 'Ulrich Honighausen'
+    ]
+  }
+];
+
+const underFiveHundred = [
+  'Sara Logsdon', 'Charles Caldwell', 'Joseph Mulinare, MD', 'Lewis Levy', 'Paul Sundell',
+  'Thomas Gust', 'Lynne & Ted Bernstein', 'Wayne Roth', 'Brian Sharp', 'Dennis Fischer',
+  'Joseph Turek', 'Michael Rowley', 'Wayne Ober', 'Christopher Boss', 'Dave Suri',
+  'David Ortman', 'Dean Regrut', 'Jeff McCann', 'Lori & Linus Benoit', 'Montana Griffin',
+  'Peter McNally', 'Polly Wachtenheim', 'Sissy & Sam Nematswerani', 'Benjamin and Miriam Flowers',
+  'Brian Anderson', 'Laura Yee', 'Neville & Jane Nason', 'Alison Ward', 'Beth Van Kasper',
+  'Calvin Vain', 'Charles & Elizabeth Levy', 'Corinne Martinez', 'Craig Corbitt', 'Debi Lister',
+  'Deedee Witman', 'Elise Cocke', 'Frederick Novak', "Gene & Joy D'Ovidio", 'George Porter',
+  'James Egan', 'Joe Farina', 'Karl & Deborah Matthies', 'Karl Buder', 'Menelaos Kamariotidis',
+  'Miriam Kupperman & Andrew Alvins', 'Nicholas & Ellen Besobrasow', 'Richard Smith',
+  'Robin Poore', 'Susana V. de Stockder', 'Wendy Bower', 'Dale Swanson', 'William Quinn',
+  'Alisa Miller', 'Andrew Harris', 'Brian Gleason', 'Dan Gallagher', 'Daniel Menden',
+  'David Dole', 'Dennis Stjepanovic', 'Doug Lawrence', 'Eddy & Sylvia Bouzaglou',
+  'Eric Moeller', 'Heather & Kenneth Boivin', 'Id Black', 'Jeremy Robins Gordon',
+  'Karin Gustauson', 'Kevin Weishaar', 'Leonardo Rub', 'Mr. & Mrs. Ned Gibbons',
+  'Nat & Bonnie Smith', 'Olivia Bernard', 'Philip & Lynn Garnett', 'Richard Biddle',
+  'Roberta Cole', 'Sarah Hamza', 'Thomas Brown', 'Thomas Kaspereit', 'M.R. Duskin',
+  'Amrit Kohli', 'Darrell Plimpton', 'Elizabeth Byers', 'Fernando Mirandoli', 'John Perikos',
+  'John Widroe', 'Karen Kenny', 'Lauren Estern', 'Richard Brooks', 'Ryan Winkler',
+  'Sanja Schoenwald', 'Stephen Baker', 'Stephen Schumm', 'Wendy Ward', 'Francoise Carpenter',
+  'Marjorie Thompson', 'Sarah Esterling', 'Ellen Holtzman Robin', 'Frederick Bold',
+  'Ken & Karleen Canfield', 'Michael & Insa Wood', 'Catherine Hutton', 'Alexandria Boyer',
+  'Anne Fish', 'Anne MacKichan', 'Annette & Thomas Buechel', 'Arthur McBreen', 'B. Shafran',
+  'Bernard Marks', 'Beth Arlene Rodal', 'Beth Tarasi', 'Beverly Harper', 'Brian Farrell',
+  'Brian Whelan', 'Bryan & Amy Yoder', 'Cameron Haag', 'Carl Hartdegen', 'Carl Mohrbacher',
+  'Carlos Gomez', 'Christina Carrari', 'Constance Margolin', "Dan O'Reilly",
+  'Dana Hernandez Strick', 'Dana Mason', 'Daniel DiPaci', 'David & Carol Schricker',
+  'David Nute', 'Debra Martz', 'Dennis Francisco & Kathleen Malloy', 'Diane Peterson',
+  'Earl & Alice Moussa-Davis', 'Edward Beitenman', 'Elaine & David Lowell',
+  'Elizabeth McDermott', 'Elizabeth Rowan', 'Ernst Bauer', 'Eve Brilliant', 'Florentin Tuca',
+  'Frances Ficke', 'Frank Merola', 'George Ehlen, Jr.', 'Ginger Koppi',
+  'Guruprasad Krishnamurthy', 'Harley Frank', 'Ilona Rodriguez', "James & Lynda O'Brien",
+  'James Bracy', 'James Parker', 'Jan Holan', 'Jan Lassetter Mead', 'Janice Fong',
+  'Jeff Langejans', 'Jeffrey Yee', 'Joan Levin', 'Joan Lukasik', 'John Rusinek',
+  'John Van Gorder', 'Joseph Howton', 'Judith & Larry Jezek', 'Judith Cone',
+  'Julie Luckenbach', 'Katrinka McCallum', 'Kenneth Talan', 'Kerry Fischer', 'Kirk Crawford',
+  'Kurt & Melanie Semmel', 'L. Marshall Fudge', 'Lawrence Hager', 'Leon Cowen',
+  'Linda Holloway', 'Lisa Setterfield', 'M. A. Greenstein', 'Mark Phillips', 'Mark Schelde',
+  'Marlis Harris', 'Martin Solis', 'Marvin Gans', 'Mary Hostetler', 'Matt Reardon',
+  'Michael Finley', 'Michael Trubsju', 'Monique Stern', 'Montie Parker', 'Nadine Agosta',
+  'Nancy Kopitnik', 'Nanette Berninger', 'Narenda Gupta', 'Parmjit Khangura',
+  'Patricia Galvin', 'Paul Bloom', 'Paul Puddington', 'Paula Anderson', 'Penny Schultz',
+  'Peter & Kathleen Chakoutis', 'Quita Cruciger', 'Rebecca Acheson',
+  'Robert & Diana Sangston', 'Robert Artherton', 'Robert Grund', 'Robert Kunio',
+  'Rockey Freundenberg', 'Russell Gordon', 'Russell Hall', 'Sharon St. James', 'Sheila McCrae',
+  "Shirley O'Sullivan", 'Stanley Weiss', 'Stewart Irving', 'Susan Dittman', 'Susan Winkler',
+  'Thomas Rahn', 'Timothy & Patricia Galvin', 'Valeriano Varez Suarez', 'Valerie Sklarevsky',
+  'William Rutkoske', 'Anne Marie Johnson', 'Alessandra Ashley', 'John Semanick',
+  'Ivre Turner', 'Cierra Buer', 'Curtis Hamilton', 'Gene Gilmer', 'Gustav Medberg',
+  'Mark Sirota', 'Michael Ehlen', 'Harry Chilianis', 'Vincent Corbett, Jr.', 'Prashant Patel',
+  'Adolfo Montoya', 'Ajay Mankani', 'Alberto Desirelli', 'Ana Romero', 'Andrew Silchuk',
+  'Ann Jacobs', 'Ann Leslie Graham', 'Anthony Hardy', 'Antonio Castilla', 'Benjamin McKay',
+  'Bred & Karen Nagle', 'Carlos and Natalie Fairbands', 'Cheryl Dematteis',
+  'Chirstopher Blazic', 'Craig Ralstin', 'Crystal Tang', 'Cynthia & Kingsley Murphy',
+  'Cynthia Willson', 'Daniel Mallarino', 'David Invaldi', 'David Sargent', 'Dezso Farkas',
+  'Diana Reing', 'Elsa Corrigan', 'Erik Alstrand', 'F. Fischer', 'Gail Kraft-Hall',
+  'Gary & Lori Canepa', 'GG. Dubois', 'Giti Ashraf', 'Greg Evans', 'Helen Dwight',
+  'Jane Sutherland', 'Jared Faciszewski', 'Jason Adair', 'John Cerwin', 'John Heard',
+  'Joseph Flowers', 'Judith Newton', 'Judy Hamilton', 'Julie Marquet', 'K. Murphy',
+  'Lee Sevison', 'Lige Robinson', 'Linda Adams', 'Linda Mahaid', 'Mahender Didwania',
+  'Maria Mazer', 'Mark Belanger', 'Martha Partridge', 'Mary Edelen', 'Matthew Heston',
+  'Meghan Lewis', 'Michel Fuller', 'Mitch Whiteford', 'Pascal Kinduelo', 'Paul Decker',
+  'Phillip Gordon', 'Renee Erle', 'Richard & Christina Kunaszyk', 'Robert McReynolds',
+  'Rusty & Lisa James', 'Sally Klingbeil', 'Shadrouz Kianouri', 'Shelley Gatlin',
+  'Stephen Pachan', 'Steven Finegan', 'Terry Roberts', 'Thomas & Theresa Adams',
+  'Tracy Gallaher', 'Yat Ping Wong', 'Darcie Taylor', 'Gary & Kathleen Ciany',
+  'Robert Dawson', 'Robert Schroeder', 'Sandra Brooks', 'Eric Shaw', 'Iskra Jacobo',
+  'Paul & Lisa Westerman', 'Betsy Cunningham', 'Eveny Turgenev', 'Susan Frost',
+  'Victoria Jensen', 'Ariel Axelrod-Hahn', 'Bob Stein & Lisa McCutcheon',
+  'Christianna Seidel', 'Douglas Carroll', 'Emily Healy', 'George Bernales', 'Karen Varnado',
+  'Kevin & Margaret Trilli', 'Kevin Parichan', 'M. Langer', 'Marion Wolfe',
+  'Nadyezka Quintero', 'Paul Pearson', 'R. Largman', 'Ricky Fishman', 'Robin Rose',
+  'Samuel Brown', 'Shanna Blanchard', 'Tanyika Watson', 'William Fleener', 'Aleda Cheng',
+  'Aymen Wafa', 'Costas Papaellinas', 'Jelani Williams', 'Jessica Hiam', 'Laszlo Demeter',
+  'Laurie Grim', 'Leonard Forys', 'Lisa Evers', 'Marc Whitlock', 'Maxim Kostyk',
+  'Michael Binkhurst', 'Orlando Waugh', 'Miriam Fried', 'John Stamos', 'Christine Torington',
+  'E. Jensen', 'Griswold', 'Jennifer Stone', 'Mark Rodriqs', 'Natalya Vyashenko', 'Ngouan Fils'
+];
+
+const corporateDonors = [
+  'Joint Juice, Inc.', 'Cargill, Inc.', 'Premier Nutrition Corp', 'Benevity Fund',
+  'Waterfront Container Lending', 'Stryker Corporation', 'The Schwab Fund',
+  'Mill Valley Market, Inc', 'Aperion Biologics', 'RTI/MTG', 'Precision Medical',
+  'Amniotechnology, Inc.', 'Amazon Smile', 'Glass Packaging Institute', 'Cortexyme',
+  'Network for Good', 'Microsoft Giving Campaign', 'Sports Basement', 'Only A Dream Movie',
+  'Little Yim Corp.'
+];
+---
+
+<Layout title="Friends of the Foundation">
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-stone-950 to-stone-900 text-white py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <p class="text-accent-400 font-medium uppercase tracking-wider text-sm mb-4">
+        Our Supporters
+      </p>
+      <h1 class="font-display text-display-md md:text-display-lg text-white mb-6">
+        Friends of the Foundation
+      </h1>
+      <p class="text-xl text-stone-300 leading-relaxed">
+        The generous investment of our donors powers our movement to pioneer new orthopaedic 
+        treatments that accelerate healing, enabling people to stay active through research, 
+        development, innovation, and education.
+      </p>
+    </div>
+  </section>
+
+  <!-- Visionary Donors ($500,000+) -->
+  <section class="py-16 bg-gradient-to-b from-stone-900 to-stone-800">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <div class="inline-flex items-center gap-2 px-5 py-2.5 bg-accent-500/20 text-accent-300 rounded-full mb-4 border border-accent-500/30">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+        </svg>
+        <span class="font-semibold">Visionary Donors</span>
+      </div>
+      <p class="text-accent-400 font-display text-xl mb-10">$500,000+</p>
+      <div class="flex flex-wrap justify-center gap-6">
+        {donorTiers[0].donors.map((donor) => (
+          <div class="relative bg-gradient-to-br from-stone-700 to-stone-800 px-10 py-8 rounded-sm border border-accent-500/40 shadow-[0_0_30px_rgba(235,107,71,0.15)] hover:shadow-[0_0_40px_rgba(235,107,71,0.25)] transition-all duration-300">
+            <p class="font-display text-2xl text-white">{donor}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership Circle ($100,000 - $499,999) -->
+  <section class="py-16 bg-gradient-to-b from-stone-800 to-stone-700">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-stone-600 text-stone-200 rounded-full mb-4 border border-stone-500">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+        </svg>
+        <span class="font-semibold">Leadership Circle</span>
+      </div>
+      <p class="text-stone-300 font-display text-lg mb-8">$100,000 – $499,999</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        {donorTiers[1].donors.map((donor) => (
+          <div class="bg-stone-600/80 border border-stone-500 px-5 py-3 rounded-sm hover:bg-stone-600 transition-all duration-300">
+            <p class="font-medium text-white">{donor}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefactors ($50,000 - $99,999) -->
+  <section class="py-14 bg-gradient-to-b from-stone-700 to-stone-500">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-stone-400/30 text-stone-100 rounded-full mb-4 border border-stone-400/50">
+        <span class="font-semibold">Benefactors</span>
+      </div>
+      <p class="text-stone-200 font-display text-lg mb-8">$50,000 – $99,999</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        {donorTiers[2].donors.map((donor) => (
+          <span class="px-4 py-2 bg-stone-400/30 border border-stone-400/50 text-white rounded-sm font-medium hover:bg-stone-400/50 transition-colors">{donor}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners ($25,000 - $49,999) -->
+  <section class="py-14 bg-gradient-to-b from-stone-500 to-stone-300">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-stone-600/30 text-stone-800 rounded-full mb-4 border border-stone-600/30">
+        <span class="font-semibold">Partners</span>
+      </div>
+      <p class="text-stone-700 font-display text-lg mb-8">$25,000 – $49,999</p>
+      <div class="flex flex-wrap justify-center gap-2">
+        {donorTiers[3].donors.map((donor) => (
+          <span class="px-3 py-1.5 bg-white/60 border border-stone-400 text-stone-800 rounded-sm text-sm hover:bg-white transition-colors">{donor}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Lower Tier Donors -->
+  <section class="py-12 bg-gradient-to-b from-stone-300 to-stone-100">
+    <div class="max-w-6xl mx-auto px-6">
+
+      <!-- $10,000 - $24,999 -->
+      <div class="mb-14">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="h-px flex-1 bg-stone-400"></div>
+          <div class="text-center">
+            <p class="text-xs text-stone-600 uppercase tracking-wider mb-1">Patrons</p>
+            <h2 class="font-display text-lg text-stone-800">$10,000 – $24,999</h2>
+          </div>
+          <div class="h-px flex-1 bg-stone-400"></div>
+        </div>
+        <p class="text-center text-stone-700 text-sm leading-loose max-w-4xl mx-auto">
+          {donorTiers[4].donors.join(' • ')}
+        </p>
+      </div>
+
+      <!-- $5,000 - $9,999 -->
+      <div class="mb-14">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="h-px flex-1 bg-stone-300"></div>
+          <div class="text-center">
+            <p class="text-xs text-stone-500 uppercase tracking-wider mb-1">Advocates</p>
+            <h2 class="font-display text-lg text-stone-700">$5,000 – $9,999</h2>
+          </div>
+          <div class="h-px flex-1 bg-stone-300"></div>
+        </div>
+        <p class="text-center text-stone-700 text-sm leading-loose max-w-4xl mx-auto">
+          {donorTiers[5].donors.join(' • ')}
+        </p>
+      </div>
+
+      <!-- $1,000 - $4,999 -->
+      <div class="mb-14">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="h-px flex-1 bg-stone-300"></div>
+          <div class="text-center">
+            <p class="text-xs text-stone-500 uppercase tracking-wider mb-1">Supporters</p>
+            <h2 class="font-display text-lg text-stone-700">$1,000 – $4,999</h2>
+          </div>
+          <div class="h-px flex-1 bg-stone-300"></div>
+        </div>
+        <p class="text-center text-stone-600 text-sm leading-loose max-w-5xl mx-auto">
+          {donorTiers[6].donors.join(' • ')}
+        </p>
+      </div>
+
+      <!-- $500 - $999 -->
+      <div class="mb-14">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="h-px flex-1 bg-stone-300"></div>
+          <div class="text-center">
+            <p class="text-xs text-stone-500 uppercase tracking-wider mb-1">Friends</p>
+            <h2 class="font-display text-lg text-stone-700">$500 – $999</h2>
+          </div>
+          <div class="h-px flex-1 bg-stone-300"></div>
+        </div>
+        <p class="text-center text-stone-600 text-sm leading-loose max-w-5xl mx-auto">
+          {donorTiers[7].donors.join(' • ')}
+        </p>
+      </div>
+
+      <!-- Under $500 -->
+      <div>
+        <div class="flex items-center gap-4 mb-6">
+          <div class="h-px flex-1 bg-stone-300"></div>
+          <div class="text-center">
+            <p class="text-xs text-stone-500 uppercase tracking-wider mb-1">Contributors</p>
+            <h2 class="font-display text-lg text-stone-700">Under $500</h2>
+          </div>
+          <div class="h-px flex-1 bg-stone-300"></div>
+        </div>
+        <p class="text-center text-stone-500 text-xs leading-loose max-w-6xl mx-auto">
+          {underFiveHundred.join(' • ')}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Corporate Donors -->
+  <section class="py-16 bg-stone-900 text-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-10">
+        <p class="text-accent-400 font-medium uppercase tracking-wider text-sm mb-3">Partners in Progress</p>
+        <h2 class="font-display text-display-sm text-white">Corporate Donors</h2>
+      </div>
+      
+      <div class="flex flex-wrap justify-center gap-4">
+        {corporateDonors.map((donor) => (
+          <div class="px-5 py-2.5 bg-stone-800/60 border border-stone-700 rounded-sm hover:border-stone-600 transition-colors">
+            <p class="text-stone-300 text-sm">{donor}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-accent-500 text-white py-14">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="font-display text-display-sm text-white mb-4">
+        Join Our Community of Supporters
+      </h2>
+      <p class="text-lg text-accent-100 mb-8">
+        Your contribution helps pioneer treatments that enable people to stay active for life.
+      </p>
+      <a href="https://stoneresearch.org/donate" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-accent-600 font-medium hover:bg-accent-50 transition-colors">
+        Make a Gift Today
+      </a>
+    </div>
+  </section>
+</Layout>

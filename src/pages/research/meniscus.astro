@@ -1,0 +1,306 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const papers = [
+  {
+    id: 'meniscus-survival-arthritic',
+    title: 'Meniscus Allograft Survival in Patients with Moderate to Severe Unicompartmental Arthritis: A 2- to 7-Year Follow-up',
+    authors: ['Kevin R. Stone', 'Ann W. Walgenbach', 'Thomas J. Turek', 'Abhi Freyer', 'Martin D. Hill'],
+    journal: 'Arthroscopy',
+    year: 2006,
+    keyFinding: '89.4% allograft survival rate in arthritic knees—challenging conventional contraindications of age and arthrosis.',
+    abstract: 'Meniscus allografts can survive in a joint with arthrosis, challenging the contraindications of age and arthrosis severity. These results compare favorably with those in previous reports of meniscus allograft survival in patients without arthrosis.',
+    doi: '10.1016/j.arthro.2005.12.045',
+    studyType: 'Prospective Longitudinal',
+    patients: 45,
+    followUp: '2-7 years',
+  },
+  {
+    id: 'meniscus-lessons-learned',
+    title: 'Lessons Learned From Our First 100 Meniscus Allograft Transplants in Arthritic Knees',
+    authors: ['Kevin R. Stone', 'Ann W. Walgenbach', 'Abhi Freyer'],
+    journal: 'Humana Press - Musculoskeletal Tissue Regeneration',
+    year: 2008,
+    keyFinding: 'Comprehensive review demonstrating allografts can survive in arthritic knees and delay joint replacement.',
+    abstract: 'Meniscus transplantation is a rewarding soft tissue reconstruction that can be useful for arthritic as well as pristine knees to alleviate pain, restore function, and ultimately, delay or avoid joint arthroplasty.',
+    studyType: 'Review / Case Series',
+    patients: 100,
+    followUp: 'Multiple years',
+  },
+  {
+    id: 'meniscus-sizing',
+    title: 'Meniscal Sizing Based on Gender, Height, and Weight',
+    authors: ['Kevin R. Stone', 'Abhi Freyer', 'Thomas Turek', 'Ann W. Walgenbach', 'Sonali Wadhwa', 'John Crues'],
+    journal: 'Arthroscopy',
+    year: 2007,
+    keyFinding: 'Height, weight, and gender correlate with meniscal dimensions—simplifying tissue bank matching protocols.',
+    abstract: 'Height, weight, and gender should be considered by both tissue banks and surgeons as fast and cost-effective variables by which to predict meniscal dimensions.',
+    doi: '10.1016/j.arthro.2006.12.025',
+    studyType: 'Correlational Study',
+    patients: 111,
+    followUp: null,
+  },
+  {
+    id: 'meniscus-three-tunnel',
+    title: 'Meniscal Allografting: The Three-Tunnel Technique',
+    authors: ['Kevin R. Stone', 'Ann W. Walgenbach'],
+    journal: 'Arthroscopy',
+    year: 2003,
+    keyFinding: 'Improved arthroscopic technique securing allograft to tibia at 3 sites for better stability.',
+    abstract: 'An improved arthroscopic technique of meniscal transplantation that simplifies the surgical procedure and secures the allograft to the tibia at 3 sites. The technique is useful for both medial and lateral meniscal transplantation.',
+    doi: '10.1053/jars.2003.50133',
+    studyType: 'Surgical Technique',
+    patients: 60,
+    followUp: null,
+  },
+];
+
+const keyStats = [
+  { label: 'Total Patients Studied', value: '300+' },
+  { label: 'Allograft Survival', value: '89.4%' },
+  { label: 'Mean Follow-up', value: '5.8 Years' },
+  { label: 'Mean Age at Surgery', value: '48 Years' },
+];
+---
+
+<Layout title="Meniscus Research" description="Research on meniscus allograft transplantation and sizing">
+  <!-- Hero -->
+  <section class="bg-stone-900 text-white py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-3xl">
+        <a href="/research" class="inline-flex items-center gap-2 text-stone-400 hover:text-white text-sm mb-6 transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+          Back to Research Library
+        </a>
+        
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-14 h-14 bg-blue-500/20 rounded-sm flex items-center justify-center">
+            <svg class="w-7 h-7 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+            </svg>
+          </div>
+          <span class="category-badge category-badge--meniscus">{papers.length} Studies</span>
+        </div>
+        
+        <h1 class="font-display text-display-md md:text-display-lg text-white mb-4">
+          Meniscus Cartilage
+        </h1>
+        <p class="text-lg text-stone-300 leading-relaxed">
+          The meniscus plays a crucial role in joint stability and lubrication, capable of withstanding 
+          over two million steps per year. Our research has challenged conventional contraindications 
+          for meniscus replacement in arthritic knees.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Stats Bar -->
+  <section class="bg-stone-800 border-t border-stone-700">
+    <div class="max-w-7xl mx-auto px-6 py-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        {keyStats.map(stat => (
+          <div class="text-center">
+            <div class="font-display text-2xl md:text-3xl text-white mb-1">{stat.value}</div>
+            <div class="text-xs text-stone-400 uppercase tracking-wider">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Overview -->
+  <section class="py-12 md:py-16 bg-blue-50/50 border-b border-blue-100">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-3xl">
+        <h2 class="font-display text-xl text-stone-900 mb-4">About This Research Area</h2>
+        <div class="prose prose-stone">
+          <p class="text-stone-600 leading-relaxed">
+            The meniscus is a soft, fibrous cartilage resting between the femur and tibia. A healthy 
+            meniscus provides a gliding surface in the knee that is <strong>five times smoother than 
+            ice on ice</strong>. When damaged, the knee transmits force abnormally, leading to arthritis 
+            and pain.
+          </p>
+          <p class="text-stone-600 leading-relaxed mt-4">
+            Meniscal transplantation was previously indicated only for patients with mild arthritis, 
+            under 50 years of age. Our research demonstrates that meniscus allografts can successfully 
+            survive in arthritic knees, expanding treatment options for patients who would otherwise 
+            face joint replacement.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Papers List -->
+  <section class="py-12 md:py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="font-display text-2xl text-stone-900 mb-8">Published Studies</h2>
+      
+      <div class="space-y-6">
+        {papers.map(paper => (
+          <article class="research-card p-6 md:p-8">
+            <div class="flex flex-col md:flex-row md:items-start gap-6">
+              <div class="flex-shrink-0 w-20 text-center">
+                <div class="font-display text-3xl text-stone-300">{paper.year}</div>
+              </div>
+              
+              <div class="flex-1 min-w-0">
+                <div class="flex flex-wrap items-center gap-3 mb-3">
+                  <span class="text-xs font-medium uppercase tracking-wider text-stone-500 bg-stone-100 px-2 py-1 rounded">
+                    {paper.studyType}
+                  </span>
+                  {paper.patients && (
+                    <span class="text-xs text-stone-500">n={paper.patients}</span>
+                  )}
+                  {paper.followUp && (
+                    <span class="text-xs text-stone-500">{paper.followUp} follow-up</span>
+                  )}
+                </div>
+                
+                <h3 class="font-display text-xl text-stone-900 mb-3 leading-tight">
+                  {paper.title}
+                </h3>
+                
+                <p class="text-sm text-stone-500 mb-4">
+                  {paper.authors.join(', ')}
+                </p>
+                
+                <p class="text-stone-600 text-sm leading-relaxed mb-4">
+                  {paper.abstract}
+                </p>
+                
+                <div class="bg-blue-50 border-l-2 border-blue-500 px-4 py-3 mb-4">
+                  <p class="text-sm text-stone-700">
+                    <span class="font-semibold text-blue-700">Key Finding:</span> {paper.keyFinding}
+                  </p>
+                </div>
+                
+                <div class="flex flex-wrap items-center gap-4 text-sm">
+                  <span class="text-stone-500">
+                    <span class="font-medium text-stone-700">{paper.journal}</span>
+                  </span>
+                  {paper.doi && (
+                    <a 
+                      href={`https://doi.org/${paper.doi}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-blue-600 hover:text-blue-700 transition-colors inline-flex items-center gap-1"
+                    >
+                      View Publication
+                      <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                      </svg>
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Clinical Significance -->
+  <section class="py-12 md:py-16 bg-stone-50 border-t border-stone-100">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-3xl">
+        <h2 class="font-display text-2xl text-stone-900 mb-6">Clinical Significance</h2>
+        <div class="space-y-4 text-stone-600 leading-relaxed">
+          <p>
+            Our research has <strong>fundamentally challenged</strong> the conventional contraindications 
+            for meniscus allograft transplantation. Prior to this work, patients over 50 or those with 
+            significant arthrosis were typically excluded from consideration.
+          </p>
+          <p>
+            The 89.4% survival rate in arthritic knees—with 25% of patients over age 55—demonstrates 
+            that biologic joint reconstruction can be a viable alternative to arthroplasty for motivated 
+            patients seeking to maintain active lifestyles.
+          </p>
+          <p>
+            The sizing study has practical implications for tissue banks worldwide, establishing that 
+            simple anthropometric measurements (height, weight, gender) can predict meniscal dimensions, 
+            streamlining the donor-recipient matching process.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Resources -->
+  <section class="py-12 md:py-16 border-t border-stone-100">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="font-display text-2xl text-stone-900 mb-8">Educational Videos</h2>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Overview Video -->
+        <div class="bg-white border border-stone-200 rounded-sm overflow-hidden">
+          <div class="aspect-video bg-stone-100 relative">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-16 h-16 bg-stone-900/80 rounded-full flex items-center justify-center hover:bg-accent-500 transition-colors cursor-pointer">
+                <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-medium uppercase tracking-wider text-blue-600 mb-2 block">Educational</span>
+            <h3 class="font-display text-lg text-stone-900 mb-3">Torn Meniscus Cartilage Overview</h3>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              The knee joint is composed of two types of cartilage: articular cartilage and meniscus cartilage. 
+              Repair of the meniscus is extremely important for joint stability, force transmission, lubricity, 
+              and protection of the articular cartilage. When the meniscus is lost, the joint space becomes 
+              abnormal as articular cartilage wears down.
+            </p>
+          </div>
+        </div>
+
+        <!-- Transplant Video -->
+        <div class="bg-white border border-stone-200 rounded-sm overflow-hidden">
+          <div class="aspect-video bg-stone-100 relative">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-16 h-16 bg-stone-900/80 rounded-full flex items-center justify-center hover:bg-accent-500 transition-colors cursor-pointer">
+                <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-medium uppercase tracking-wider text-green-600 mb-2 block">Surgical Technique</span>
+            <h3 class="font-display text-lg text-stone-900 mb-3">Meniscus Transplantation: Three-Tunnel Technique</h3>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              The meniscus cartilage can be replaced by an outpatient arthroscopic procedure. Through small portals, 
+              we create tunnels where the meniscus inserts on the front, back, and corner of the knee, then pull 
+              the donor meniscus through with sutures and secure it around the rim.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Quote -->
+      <div class="mt-10 bg-blue-50 border-l-4 border-blue-500 p-6">
+        <blockquote class="text-stone-700 leading-relaxed italic">
+          "Meniscus transplantation has completely changed our perception of knee arthritis and how to treat it. 
+          In the past when a person would get arthritis, there would be wearing away of the articular cartilage. 
+          Very commonly that occurs when an athlete has torn their meniscus and a surgeon removed part of it. 
+          Over the years, the patient wears away the articular cartilage. Now we can replace that meniscus 
+          and prevent the progression to severe arthritis."
+        </blockquote>
+        <p class="mt-3 text-sm text-stone-500">— Dr. Kevin R. Stone</p>
+      </div>
+
+      <div class="mt-8 text-center">
+        <a href="/videos#surgical-techniques" class="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center gap-2">
+          View All Meniscus Videos
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

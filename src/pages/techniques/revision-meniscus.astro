@@ -1,0 +1,94 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const video = {
+  title: 'Revision Medial Meniscus Allograft Transplantation',
+  vimeoId: '663170160',
+  category: 'Knee Procedures',
+  duration: '5:15',
+  surgeon: 'Kevin R. Stone, MD',
+  year: '2014',
+  location: 'San Francisco, CA'
+};
+---
+
+<Layout title={video.title}>
+  <section class="bg-stone-900 text-white py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <a href="/techniques" class="inline-flex items-center gap-2 text-stone-400 hover:text-white text-sm mb-6 transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Back to Surgical Techniques
+      </a>
+      <div class="flex items-center gap-3 mb-4">
+        <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-sm font-medium rounded-full">{video.category}</span>
+        <span class="text-stone-500">•</span>
+        <span class="text-stone-400 text-sm">{video.duration}</span>
+      </div>
+      <h1 class="font-display text-display-sm md:text-display-md text-white mb-4">{video.title}</h1>
+      <p class="text-stone-400">Performed by {video.surgeon} · {video.year} · {video.location}</p>
+    </div>
+  </section>
+
+  <section class="bg-stone-800 py-8">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="aspect-video relative rounded-sm overflow-hidden bg-stone-900">
+        <iframe src={`https://player.vimeo.com/video/${video.vimeoId}?h=0&title=0&byline=0&portrait=0`} class="absolute inset-0 w-full h-full" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-12">
+        <div class="md:col-span-1">
+          <div class="sticky top-24">
+            <h3 class="font-display text-lg text-stone-900 mb-4">Quick Facts</h3>
+            <dl class="space-y-4 text-sm">
+              <div><dt class="text-stone-500">Procedure Type</dt><dd class="font-medium text-stone-900">Revision Transplantation</dd></div>
+              <div><dt class="text-stone-500">Indication</dt><dd class="font-medium text-stone-900">Failed Primary Allograft</dd></div>
+              <div><dt class="text-stone-500">Technique</dt><dd class="font-medium text-stone-900">Modified Three-Tunnel</dd></div>
+            </dl>
+            <div class="mt-8 pt-8 border-t border-stone-200">
+              <a href="/research/meniscus" class="text-sm text-emerald-600 hover:text-emerald-700 flex items-center gap-1">
+                View Meniscus Studies
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:col-span-2">
+          <h2 class="font-display text-2xl text-stone-900 mb-6">Summary</h2>
+          <div class="prose prose-stone max-w-none mb-12">
+            <p>Revision meniscus allograft transplantation is performed when a primary meniscus transplant has failed due to re-tear, extrusion, or other complications. The procedure requires careful removal of the failed graft while preserving viable rim tissue.</p>
+            <h3>Technical Considerations</h3>
+            <p>The revision procedure follows similar principles to primary transplantation but with additional challenges: scarred tissue planes, altered bone tunnels, and potentially compromised articular cartilage. Meticulous technique is essential for successful outcomes.</p>
+          </div>
+
+          <h2 class="font-display text-2xl text-stone-900 mb-6">Transcript</h2>
+          <div class="bg-stone-50 rounded-sm p-6 md:p-8">
+            <div class="prose prose-stone prose-sm max-w-none">
+              <p>This video demonstrates revision medial meniscus allograft transplantation in a patient whose primary transplant failed due to progressive degeneration. The failed allograft tissue is carefully removed while preserving the peripheral rim and capsular attachments where possible.</p>
+              <p>New bone tunnels are created at slightly different angles to avoid the previous tunnel tracks. The revision allograft is sized appropriately and inserted using the three-tunnel technique, with particular attention to achieving secure fixation and proper tensioning.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-stone-100 py-8">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="flex justify-between items-center">
+        <a href="/techniques/medial-meniscus" class="text-stone-600 hover:text-stone-900 inline-flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          Medial Meniscus
+        </a>
+        <a href="/techniques/meniscus-prep" class="text-emerald-600 hover:text-emerald-700 inline-flex items-center gap-2">
+          Next: Meniscus Prep
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

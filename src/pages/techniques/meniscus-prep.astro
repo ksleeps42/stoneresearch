@@ -1,0 +1,95 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const video = {
+  title: 'Meniscus Allograft Transplant Preparation',
+  vimeoId: '663169019',
+  category: 'Knee Procedures',
+  duration: '3:45',
+  surgeon: 'Kevin R. Stone, MD',
+  year: '2014',
+  location: 'San Francisco, CA'
+};
+---
+
+<Layout title={video.title}>
+  <section class="bg-stone-900 text-white py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <a href="/techniques" class="inline-flex items-center gap-2 text-stone-400 hover:text-white text-sm mb-6 transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Back to Surgical Techniques
+      </a>
+      <div class="flex items-center gap-3 mb-4">
+        <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-sm font-medium rounded-full">{video.category}</span>
+        <span class="text-stone-500">•</span>
+        <span class="text-stone-400 text-sm">{video.duration}</span>
+      </div>
+      <h1 class="font-display text-display-sm md:text-display-md text-white mb-4">{video.title}</h1>
+      <p class="text-stone-400">Performed by {video.surgeon} · {video.year} · {video.location}</p>
+    </div>
+  </section>
+
+  <section class="bg-stone-800 py-8">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="aspect-video relative rounded-sm overflow-hidden bg-stone-900">
+        <iframe src={`https://player.vimeo.com/video/${video.vimeoId}?h=0&title=0&byline=0&portrait=0`} class="absolute inset-0 w-full h-full" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-12">
+        <div class="md:col-span-1">
+          <div class="sticky top-24">
+            <h3 class="font-display text-lg text-stone-900 mb-4">Quick Facts</h3>
+            <dl class="space-y-4 text-sm">
+              <div><dt class="text-stone-500">Topic</dt><dd class="font-medium text-stone-900">Graft Preparation</dd></div>
+              <div><dt class="text-stone-500">Focus</dt><dd class="font-medium text-stone-900">Sizing & Tissue Handling</dd></div>
+              <div><dt class="text-stone-500">Audience</dt><dd class="font-medium text-stone-900">Surgeons & Tissue Banks</dd></div>
+            </dl>
+            <div class="mt-8 pt-8 border-t border-stone-200">
+              <a href="/research/meniscus" class="text-sm text-emerald-600 hover:text-emerald-700 flex items-center gap-1">
+                View Sizing Research
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:col-span-2">
+          <h2 class="font-display text-2xl text-stone-900 mb-6">Summary</h2>
+          <div class="prose prose-stone max-w-none mb-12">
+            <p>Proper preparation of the meniscus allograft is critical to successful transplantation. This video covers tissue bank recommendations for graft sizing and surgical back-table preparation techniques.</p>
+            <h3>Key Principles</h3>
+            <p>Research has shown that height, weight, and gender correlate with meniscal dimensions, providing tissue banks and surgeons with simple, cost-effective variables for predicting appropriate graft size. The graft must be properly sized, bone plugs shaped, and sutures placed before implantation.</p>
+          </div>
+
+          <h2 class="font-display text-2xl text-stone-900 mb-6">Transcript</h2>
+          <div class="bg-stone-50 rounded-sm p-6 md:p-8">
+            <div class="prose prose-stone prose-sm max-w-none">
+              <p>This video demonstrates the preparation of meniscus allograft tissue for transplantation. The graft arrives from the tissue bank with bone blocks attached to the anterior and posterior horns.</p>
+              <p>The bone blocks are shaped to fit through the prepared tunnels—typically 8-10mm in diameter. Sutures are placed through the bone plugs and the body of the meniscus to allow passage through the tunnels and peripheral fixation.</p>
+              <p>Proper sizing is essential: an undersized graft will not adequately distribute load, while an oversized graft may extrude. Patient height, weight, and gender provide reliable sizing parameters.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-stone-100 py-8">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="flex justify-between items-center">
+        <a href="/techniques/revision-meniscus" class="text-stone-600 hover:text-stone-900 inline-flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          Revision Meniscus
+        </a>
+        <a href="/techniques/knee-dislocation" class="text-emerald-600 hover:text-emerald-700 inline-flex items-center gap-2">
+          Next: Knee Dislocation
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

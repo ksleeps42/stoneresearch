@@ -1,0 +1,116 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const video = {
+  title: 'Medial Meniscus Allograft Transplantation',
+  vimeoId: '663065746',
+  category: 'Knee Procedures',
+  duration: '8:30',
+  surgeon: 'Kevin R. Stone, MD',
+  year: '2014',
+  location: 'San Francisco, CA'
+};
+---
+
+<Layout title={video.title}>
+  <section class="bg-stone-900 text-white py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <a href="/techniques" class="inline-flex items-center gap-2 text-stone-400 hover:text-white text-sm mb-6 transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Back to Surgical Techniques
+      </a>
+      <div class="flex items-center gap-3 mb-4">
+        <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-sm font-medium rounded-full">{video.category}</span>
+        <span class="text-stone-500">•</span>
+        <span class="text-stone-400 text-sm">{video.duration}</span>
+      </div>
+      <h1 class="font-display text-display-sm md:text-display-md text-white mb-4">{video.title}</h1>
+      <p class="text-stone-400">Performed by {video.surgeon} · {video.year} · {video.location}</p>
+    </div>
+  </section>
+
+  <section class="bg-stone-800 py-8">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="aspect-video relative rounded-sm overflow-hidden bg-stone-900">
+        <iframe src={`https://player.vimeo.com/video/${video.vimeoId}?h=0&title=0&byline=0&portrait=0`} class="absolute inset-0 w-full h-full" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-12">
+        <div class="md:col-span-1">
+          <div class="sticky top-24">
+            <h3 class="font-display text-lg text-stone-900 mb-4">Quick Facts</h3>
+            <dl class="space-y-4 text-sm">
+              <div><dt class="text-stone-500">Procedure Type</dt><dd class="font-medium text-stone-900">Meniscus Transplantation</dd></div>
+              <div><dt class="text-stone-500">Graft Type</dt><dd class="font-medium text-stone-900">Donor Allograft</dd></div>
+              <div><dt class="text-stone-500">Technique</dt><dd class="font-medium text-stone-900">Three-Tunnel Arthroscopic</dd></div>
+              <div><dt class="text-stone-500">Survival Rate</dt><dd class="font-medium text-stone-900">89.4% at 2-7 years</dd></div>
+            </dl>
+            <div class="mt-8 pt-8 border-t border-stone-200">
+              <a href="/research/meniscus" class="text-sm text-emerald-600 hover:text-emerald-700 flex items-center gap-1">
+                View Meniscus Studies
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:col-span-2">
+          <h2 class="font-display text-2xl text-stone-900 mb-6">Summary</h2>
+          <div class="prose prose-stone max-w-none mb-12">
+            <p>Meniscus allografting—the replacement of meniscus tissue—has become a routine procedure for both young and older patients. When surgeons remove the meniscus (the shock absorber for the knee), patients often develop arthritis years later, sometimes experiencing pain immediately after resection.</p>
+            <h3>Clinical Rationale</h3>
+            <p>If a surgeon removes part of the meniscus or the patient loses a large portion, it's better to replace the tissue immediately, prevent arthritis, and return the patient to sports. Even patients presenting decades later with knee joint arthritis from meniscus loss can benefit from transplantation.</p>
+          </div>
+
+          <h2 class="font-display text-2xl text-stone-900 mb-6">Transcript</h2>
+          <div class="bg-stone-50 rounded-sm p-6 md:p-8">
+            <div class="prose prose-stone prose-sm max-w-none">
+              <p class="text-stone-500 italic mb-4">[00:04]</p>
+              <p>Medial meniscus transplantation is performed in the following steps. First, the knee is examined and the remaining meniscus cartilage debrided back to a stable base, taking care to preserve as much of the rim as possible. The rim helps prevent meniscus transplantation subluxation. Next, a cannulated guide is brought into place and a needle passed down the guide in order to create a bleeding bed in the remaining meniscus tissue, as well as to Swiss cheese the deep fibers of the medial collateral ligament. This permits the knee to be opened widely for easy meniscus allograft insertion. Blooding the peripheral rim is important to create a healing base. The anterior remaining meniscus tissue can be removed with a 15 blade brought through the anterior medial portal. Again, care is taken to preserve the meniscus rim. It should be noted the anterior meniscus insertion site is over the anterior margin of the tibial plateau.</p>
+              
+              <p class="text-stone-500 italic mb-4 mt-6">[01:10]</p>
+              <p>The remaining anterior meniscal tissue can be trimmed back a little bit using a back biter to ensure a bloody stable base. The intercondylar notch is cleaned in order to ensure complete visualization of the posterior horn of the medial meniscus. A customized meniscus guide is brought onto the field, which has a curvature to match the femoral condyle and a spoon to capture the guide pin. The guide must be placed over the posterior aspect of the tibial plateau. The most common error is to place this guide pin too far anterior. If the guide pin is placed too far anterior, the meniscus posterior horn will tear when the knee goes into flexion. A small portal is made on the anterior medial aspect of the tibia. A guide pin is passed from anterior medial to the posterior horn insertion site. The guide pin is drilled under direct visualization to the spoon of the guide, and then gently tapped up to confirm visualization.</p>
+              
+              <p class="text-stone-500 italic mb-4 mt-6">[02:10]</p>
+              <p>A curved curette is placed over the guide pin, and then a six millimeter drill is used to drill over the guide pin to the insertion site. A flexible suture passer is passed up the bore of the six millimeter drill, and the suture is brought out to a slightly widened anterior medial portal. This step is repeated at the posterior quarter of the tibial plateau. The anterior tunnel for the meniscus transplant is made with a straight AO guide at the anterior insertion site. A guide pin is placed and then over drilled with a six millimeter drill to a depth of 10 millimeters. This socket is then used to capture a triangle guide, which is placed into the socket and the anterior tibial hole drilled from the anterior margin of the tibia into the base of the socket. A guide pin is placed into the base of the socket and then over drilled with a 4.5 millimeter cannulated drill.</p>
+              
+              <p class="text-stone-500 italic mb-4 mt-6">[03:14]</p>
+              <p>A flexible suture passer is passed up the bore of the drill. The suture is brought out through the anterior medial portal after it's been slightly widened to ensure there's no tissue interposed between the sutures. The allograft meniscus is then brought onto the back table, a small piece sent to the bacteriology lab to ensure that there's no contamination, and the meniscus itself is washed in alcohol for five minutes to diminish the chance of handling contamination from the original harvest. The anterior horn of the meniscus is then dissected free from the tibial plateau. Since this tissue will be dunked into the bony socket, no bone is left attached to it. Permanent sutures are then weaved into the anterior horn, into the posterior one quarter, and then into the posterior horn after the meniscus has been resected from the tibial plateau. Care is taken to preserve some of the meniscal tibial ligaments that remain on the under surface of the meniscus transplant.</p>
+              
+              <p class="text-stone-500 italic mb-4 mt-6">[04:21]</p>
+              <p>It is noted that the meniscus inserts on the tibial plateau through the meniscal tibial ligaments, not into the surrounding synovium primarily. After the meniscus sutures have been loaded, excess tissue is trimmed. Wall and back lines are placed on the inferior aspect of the meniscus in order to help identify the superior and inferior sides when inserting into the knee. The meniscus is then brought onto the field. The sutures passed through the previously placed suture loops and then pulled through a slightly widened anterior medial portal. Care must be taken not to twist the sutures during this step, which is a relatively common event. The sutures must then be untwisted so that the meniscus will seat properly. Once the meniscus is pulled into the knee and the horns inserted into each of the tibial tunnels, the posterior aspect is secured, and then the anterior horn is brought into the knee into the anterior tibial socket.</p>
+              
+              <p class="text-stone-500 italic mb-4 mt-6">[05:18]</p>
+              <p>Once the meniscus is secured into the tunnels, it is temporarily fixed with clamps on the anterior tibial margin. Inside out meniscal suture guides are then brought onto the field and inside out suturing performed on the superior and inferior aspects of the meniscus transplant. The sutures are brought out through small posterior medial puncture sites. We no longer make large open posterior medial or posterior lateral incisions for meniscal repair or meniscal transplantation, as we have found that neurovascular entrapment is diminished by small suture punctures with then dissection down to the joint capsule. The sutures are then tied individually. Additional anterior portals are made as the suturing progresses around to the anterior aspect of the knee. The horn sutures are then tied over the bony bridge, ensuring that each of the horns are dunked into the tunnels. The knee is then taken through a full range of motion to ensure stability. The anterior horn of the meniscus is secured by Casper suture punches into the anterior horn, and these sutures are then tied on the anterior capsule. The knee is then taken through a full range of motion to ensure stability of the meniscus. Additional articular cartilage treatment is then carried out if cartilage grafting or paste grafting is required at this time.</p>
+              
+              <p class="text-stone-500 italic mb-4 mt-6">[06:45]</p>
+              <p>The postoperative program for medial meniscus transplantation involves partial weight bearing for the first four weeks in full extension. Out of brace range of motion occurs from zero to 90 degrees for the first four weeks, taking care not to push past 90 degrees in order to protect the posterior horn healing. Additionally, a total body conditioning program is undertaken focusing on trunk strength, balance, and agility. Well legged bicycle exercises are started immediately. Pool exercises are started after the incisions are healed. Full return to sports is delayed for four months post meniscus transplantation. In our first study of meniscus survival in the arthritic knee with a two to seven year follow up, more than 85% of the meniscus were still in place in this first group of 47 patients. Subsequent follow-up has confirmed meniscus survival in the arthritic knee over the past 10 years.</p>
+              
+              <p class="text-stone-500 italic mb-4 mt-6">[07:49]</p>
+              <p>Recent data indicates that of the 111 patients who are at least two years out from meniscus transplantation surgery, the mean survival time is 9.03 years. The mean time to failure for the 27 patients who failed is 4.7 years. Of the patients who are in our 10 year follow-up study—patients who have survived a minimum of 8.5 years—only three of 29 have failed. After 8.5 years, many patients are able to delay or completely avoid artificial knee replacement. Combining our articular cartilage paste grafting technique to repair damaged and arthritic areas of the knee with meniscus replacement creates a biologic rather than a bionic knee replacement. In 2008, we now have over 150 patients who have had these combined procedures. We strongly believe that biologic knee replacement is a solution for many athletic people.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-stone-100 py-8">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="flex justify-between items-center">
+        <a href="/techniques/lateral-meniscus" class="text-stone-600 hover:text-stone-900 inline-flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          Lateral Meniscus
+        </a>
+        <a href="/techniques/revision-meniscus" class="text-emerald-600 hover:text-emerald-700 inline-flex items-center gap-2">
+          Next: Revision Meniscus
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

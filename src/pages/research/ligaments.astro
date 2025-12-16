@@ -1,0 +1,301 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const papers = [
+  {
+    id: 'xenograft-acl-20-year',
+    title: 'Xenograft Bone-Patellar Tendon-Bone ACL Reconstruction: A Case Series at 20-Year Follow-up as Proof of Principle',
+    authors: ['Kevin R. Stone', 'Ann W. Walgenbach', 'Thomas J. Turek', 'John V. Crues', 'Uri Galili'],
+    journal: 'Journal of Experimental Orthopaedics',
+    year: 2023,
+    keyFinding: 'First demonstration that "humanized" porcine ligament can remodel into functional autologous ACL over 20 years.',
+    abstract: 'The studies in a small group of patients have demonstrated that implantation of porcine ligament bioprosthesis into patients with torn ACLs can result in the reconstruction of the bioprosthesis into autologous ACL that remains successful over 20 years. The possibility of humanizing porcine tissue opens the door to unlimited clinical material for tissue reconstructions.',
+    doi: '10.1186/s40634-023-00651-7',
+    studyType: 'Prospective Case Series',
+    patients: 10,
+    followUp: '20 years',
+  },
+  {
+    id: 'acl-3-incision',
+    title: 'Anterior Cruciate Ligament Reconstruction: 3-Incision Technique With Allograft Quad Tendon ACL Reconstruction',
+    authors: ['Kevin R. Stone'],
+    journal: 'Video Journal of Sports Medicine',
+    year: 2024,
+    keyFinding: 'Reproducible allograft technique using quadriceps tendon—avoiding autograft harvest damage.',
+    abstract: 'The 3-incision technique with allograft quadriceps tendon for ACL reconstruction is a reproducible surgical technique that avoids harvest from the patient\'s own body. Quadriceps tendon is significantly thicker and stronger than other allograft tissues available.',
+    doi: '10.1177/26350254231206141',
+    studyType: 'Surgical Technique',
+    patients: null,
+    followUp: null,
+  },
+];
+
+const keyStats = [
+  { label: 'Longest Follow-up', value: '20 Years' },
+  { label: 'Years Developing Technique', value: '30+' },
+  { label: 'Xenograft Study Success', value: '50%' },
+  { label: 'ACL Injuries/Year (US)', value: '250,000' },
+];
+---
+
+<Layout title="Ligaments & Tendons Research" description="Research on ACL reconstruction including xenograft and allograft techniques">
+  <!-- Hero -->
+  <section class="bg-stone-900 text-white py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-3xl">
+        <a href="/research" class="inline-flex items-center gap-2 text-stone-400 hover:text-white text-sm mb-6 transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+          Back to Research Library
+        </a>
+        
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-14 h-14 bg-amber-500/20 rounded-sm flex items-center justify-center">
+            <svg class="w-7 h-7 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+            </svg>
+          </div>
+          <span class="category-badge category-badge--ligament">{papers.length} Studies</span>
+        </div>
+        
+        <h1 class="font-display text-display-md md:text-display-lg text-white mb-4">
+          Ligaments & Tendons
+        </h1>
+        <p class="text-lg text-stone-300 leading-relaxed">
+          The ACL is crucial for knee stability and is frequently damaged during athletic activities. 
+          Our research explores alternatives to autograft reconstruction—including the first human 
+          clinical trial using "humanized" porcine tissue.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Stats Bar -->
+  <section class="bg-stone-800 border-t border-stone-700">
+    <div class="max-w-7xl mx-auto px-6 py-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        {keyStats.map(stat => (
+          <div class="text-center">
+            <div class="font-display text-2xl md:text-3xl text-white mb-1">{stat.value}</div>
+            <div class="text-xs text-stone-400 uppercase tracking-wider">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Overview -->
+  <section class="py-12 md:py-16 bg-amber-50/50 border-b border-amber-100">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-3xl">
+        <h2 class="font-display text-xl text-stone-900 mb-4">About This Research Area</h2>
+        <div class="prose prose-stone">
+          <p class="text-stone-600 leading-relaxed">
+            The current standard for ACL reconstruction involves grafting either autologous (patient's own) 
+            or allogeneic (cadaveric) tendons. Both methods have disadvantages: <strong>autograft harvest 
+            creates a second surgical site</strong> with increased pain and morbidity, while many 
+            allogeneic tendons come from elderly individuals with reduced biomechanical capacity.
+          </p>
+          <p class="text-stone-600 leading-relaxed mt-4">
+            Our research has explored two alternatives: using stronger allograft quadriceps tendon with 
+            a reproducible 3-incision technique, and—more experimentally—"humanizing" porcine tissue 
+            through enzymatic treatment to create unlimited supply of strong, young tissue.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Papers List -->
+  <section class="py-12 md:py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="font-display text-2xl text-stone-900 mb-8">Published Studies</h2>
+      
+      <div class="space-y-6">
+        {papers.map(paper => (
+          <article class="research-card p-6 md:p-8">
+            <div class="flex flex-col md:flex-row md:items-start gap-6">
+              <div class="flex-shrink-0 w-20 text-center">
+                <div class="font-display text-3xl text-stone-300">{paper.year}</div>
+              </div>
+              
+              <div class="flex-1 min-w-0">
+                <div class="flex flex-wrap items-center gap-3 mb-3">
+                  <span class="text-xs font-medium uppercase tracking-wider text-stone-500 bg-stone-100 px-2 py-1 rounded">
+                    {paper.studyType}
+                  </span>
+                  {paper.patients && (
+                    <span class="text-xs text-stone-500">n={paper.patients}</span>
+                  )}
+                  {paper.followUp && (
+                    <span class="text-xs text-stone-500">{paper.followUp} follow-up</span>
+                  )}
+                </div>
+                
+                <h3 class="font-display text-xl text-stone-900 mb-3 leading-tight">
+                  {paper.title}
+                </h3>
+                
+                <p class="text-sm text-stone-500 mb-4">
+                  {paper.authors.join(', ')}
+                </p>
+                
+                <p class="text-stone-600 text-sm leading-relaxed mb-4">
+                  {paper.abstract}
+                </p>
+                
+                <div class="bg-amber-50 border-l-2 border-amber-500 px-4 py-3 mb-4">
+                  <p class="text-sm text-stone-700">
+                    <span class="font-semibold text-amber-700">Key Finding:</span> {paper.keyFinding}
+                  </p>
+                </div>
+                
+                <div class="flex flex-wrap items-center gap-4 text-sm">
+                  <span class="text-stone-500">
+                    <span class="font-medium text-stone-700">{paper.journal}</span>
+                  </span>
+                  {paper.doi && (
+                    <a 
+                      href={`https://doi.org/${paper.doi}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-amber-600 hover:text-amber-700 transition-colors inline-flex items-center gap-1"
+                    >
+                      View Publication
+                      <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                      </svg>
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Xenograft Breakthrough -->
+  <section class="py-12 md:py-16 bg-amber-50 border-t border-amber-100">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-3xl">
+        <h2 class="font-display text-2xl text-stone-900 mb-6">The Xenograft Breakthrough</h2>
+        <div class="space-y-4 text-stone-600 leading-relaxed">
+          <p>
+            The 2023 xenograft study represents a <strong>proof of principle</strong> for one of the 
+            most ambitious goals in orthopaedic tissue engineering: creating unlimited, strong, young 
+            tissue from animal sources.
+          </p>
+          <p>
+            The processing technique eliminates α-gal epitopes (which trigger immune rejection) and 
+            uses partial glutaraldehyde crosslinking to slow macrophage infiltration. This allows the 
+            porcine tissue to gradually remodel into autologous human tissue.
+          </p>
+          <p>
+            While 5 of 10 patients experienced failure (3 from subsequent trauma, 1 from arthrofibrosis, 
+            1 from technical error), the remaining patients demonstrated <strong>stable, fully athletic 
+            knees at 20 years</strong> with MRIs showing mature remodeling of the device.
+          </p>
+          <p class="text-stone-700 font-medium">
+            If supported by additional clinical trials, this approach could eliminate the tissue supply 
+            limitations that currently constrain orthopaedic reconstruction.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Resources -->
+  <section class="py-12 md:py-16 border-t border-stone-100">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="font-display text-2xl text-stone-900 mb-8">Surgical Technique Videos</h2>
+      
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- ACL Reconstruction -->
+        <div class="bg-white border border-stone-200 rounded-sm overflow-hidden">
+          <div class="aspect-video bg-stone-100 relative">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-14 h-14 bg-stone-900/80 rounded-full flex items-center justify-center hover:bg-accent-500 transition-colors cursor-pointer">
+                <svg class="w-5 h-5 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="p-5">
+            <span class="text-xs font-medium uppercase tracking-wider text-amber-600 mb-2 block">Surgical Technique</span>
+            <h3 class="font-display text-lg text-stone-900 mb-2">ACL Reconstruction: Three-Portal Technique</h3>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              Our ACL reconstruction involves a three-portal technique using donor tendon after arthroscopic 
+              treatment of associated injuries. Notch plasty is performed only if necessary for visualization.
+            </p>
+          </div>
+        </div>
+
+        <!-- ACL Primary Repair -->
+        <div class="bg-white border border-stone-200 rounded-sm overflow-hidden">
+          <div class="aspect-video bg-stone-100 relative">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-14 h-14 bg-stone-900/80 rounded-full flex items-center justify-center hover:bg-accent-500 transition-colors cursor-pointer">
+                <svg class="w-5 h-5 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="p-5">
+            <span class="text-xs font-medium uppercase tracking-wider text-amber-600 mb-2 block">Surgical Technique</span>
+            <h3 class="font-display text-lg text-stone-900 mb-2">ACL Primary Repair</h3>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              When torn in a way that permits primary repair, sutures are placed in the ligament and secured 
+              with anchors. Growth factors and stem cells speed healing at the repair site.
+            </p>
+          </div>
+        </div>
+
+        <!-- Posterolateral Corner -->
+        <div class="bg-white border border-stone-200 rounded-sm overflow-hidden">
+          <div class="aspect-video bg-stone-100 relative">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-14 h-14 bg-stone-900/80 rounded-full flex items-center justify-center hover:bg-accent-500 transition-colors cursor-pointer">
+                <svg class="w-5 h-5 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="p-5">
+            <span class="text-xs font-medium uppercase tracking-wider text-amber-600 mb-2 block">Complex Reconstruction</span>
+            <h3 class="font-display text-lg text-stone-900 mb-2">Posterolateral Corner Reconstruction</h3>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              Anatomic reconstruction using anterior tibialis tendon allograft, passed through the fibular 
+              head and secured to the femur to eliminate posterolateral instability.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Quote -->
+      <div class="mt-10 bg-amber-50 border-l-4 border-amber-500 p-6">
+        <blockquote class="text-stone-700 leading-relaxed italic">
+          "The anterior cruciate ligament is the key stabilizer of the knee going from the back of the 
+          femur to the front of the tibia. It is ruptured commonly in sports with twisting motions. 
+          Fortunately, the ACL can be reconstructed. Our preference is to use a donor tendon which has 
+          been treated to sterilize the tissue and then used to rebuild the new anterior cruciate ligament."
+        </blockquote>
+        <p class="mt-3 text-sm text-stone-500">— Dr. Kevin R. Stone</p>
+      </div>
+
+      <div class="mt-8 text-center">
+        <a href="/videos#surgical-techniques" class="text-amber-600 hover:text-amber-700 font-medium inline-flex items-center gap-2">
+          View All Ligament Videos
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,113 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const video = {
+  title: 'Knee Dislocation & Ligament Reconstruction',
+  vimeoId: '663175472',
+  category: 'Knee Procedures',
+  duration: '12:30',
+  surgeon: 'Kevin R. Stone, MD',
+  year: '2010',
+  location: 'San Francisco, CA'
+};
+---
+
+<Layout title={video.title}>
+  <section class="bg-stone-900 text-white py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <a href="/techniques" class="inline-flex items-center gap-2 text-stone-400 hover:text-white text-sm mb-6 transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Back to Surgical Techniques
+      </a>
+      <div class="flex items-center gap-3 mb-4">
+        <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-sm font-medium rounded-full">{video.category}</span>
+        <span class="text-stone-500">•</span>
+        <span class="text-stone-400 text-sm">{video.duration}</span>
+      </div>
+      <h1 class="font-display text-display-sm md:text-display-md text-white mb-4">{video.title}</h1>
+      <p class="text-stone-400">Performed by {video.surgeon} · {video.year} · {video.location}</p>
+    </div>
+  </section>
+
+  <section class="bg-stone-800 py-8">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="aspect-video relative rounded-sm overflow-hidden bg-stone-900">
+        <iframe src={`https://player.vimeo.com/video/${video.vimeoId}?h=0&title=0&byline=0&portrait=0`} class="absolute inset-0 w-full h-full" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-12">
+        <div class="md:col-span-1">
+          <div class="sticky top-24">
+            <h3 class="font-display text-lg text-stone-900 mb-4">Quick Facts</h3>
+            <dl class="space-y-4 text-sm">
+              <div><dt class="text-stone-500">Procedure Type</dt><dd class="font-medium text-stone-900">Multi-Ligament Reconstruction</dd></div>
+              <div><dt class="text-stone-500">Structures Addressed</dt><dd class="font-medium text-stone-900">ACL, PCL, MCL, LCL</dd></div>
+              <div><dt class="text-stone-500">Patient</dt><dd class="font-medium text-stone-900">25-year-old big mountain skier</dd></div>
+              <div><dt class="text-stone-500">Injury Mechanism</dt><dd class="font-medium text-stone-900">Cliff jump landing</dd></div>
+            </dl>
+            <div class="mt-8 pt-8 border-t border-stone-200">
+              <a href="/research/ligaments" class="text-sm text-emerald-600 hover:text-emerald-700 flex items-center gap-1">
+                View Ligament Studies
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:col-span-2">
+          <h2 class="font-display text-2xl text-stone-900 mb-6">Summary</h2>
+          <div class="prose prose-stone max-w-none mb-12">
+            <p>This complex case involves a 25-year-old big mountain skier and cliff jumper who suffered a devastating knee injury in January 2010. Physical examination revealed extreme laxity of all four major knee ligaments: ACL, PCL, MCL, and LCL.</p>
+            <h3>Treatment Approach</h3>
+            <p>After initial rehabilitation for several months, the patient presented for surgical repair in March 2010. The video demonstrates reconstruction of both cruciate ligaments and posterolateral corner stabilization using allograft tissue.</p>
+          </div>
+
+          <h2 class="font-display text-2xl text-stone-900 mb-6">Transcript</h2>
+          <div class="bg-stone-50 rounded-sm p-6 md:p-8">
+            <div class="prose prose-stone prose-sm max-w-none">
+              <p class="text-stone-500 italic mb-4">[00:07]</p>
+              <p>This is a 25-year-old patient who's a big mountain skier and cliff jumper who injured his knee January, 2010 going off a cliff. He elected to rehabilitate his knee for the first few months and presented for surgical repair in March of 2010. This patient's physical examination at the time of surgery was consistent with his previous exam in the office and his MRI findings. Examination of the intercondylar notch demonstrated rupture of the PCL with a complete rupture of the fibers and absence of tissue bridging the posterior aspect of the tibia. There was a partial rupture of the anterior cruciate ligament with absence of posterior lateral fibers with a few of the anterior medial fibers still remaining. Examination of the medial compartment demonstrated it was intact except for some laxity. The medial collateral ligament examination of the lateral compartment demonstrated a drive through sign with easy visualization of the superior aspect and inferior aspect of the lateral meniscus cartilage at the popliteal hiatus consistent with posterolateral corner injury. After careful confirmation that the majority of the ACL was in fact torn, attention was then turned to the PCL where the ruptured fibers were debrided with a shaver. Careful preparation of the posterior superior aspect of the tibia at the site of the PCL insertion was carried out with both a bipolar unit and a curved shaver to ensure that the PCL footprint could be seen.</p>
+              
+              <p class="text-stone-500 italic mb-4 mt-6">[01:41]</p>
+              <p>A curette was used to clear the remaining fibers of the PCL and to ensure that the footprint could be well visualized before passing the PCL guide. A posterior tibial PCL guide was then brought through the anterior medial portal with a guide placed in the posterior aspect of the tibia. Guide position was confirmed by fluoroscopy to assure that we were low enough on the tibia at the site of the PCL insertion. Confirmation of guide position under direct fluoroscopic control was confirmed and then the drill pin passed to the guide. This drill pin was then over drilled with an 11 millimeter drill again under direct fluoroscopic control to ensure the drill did not push through the posterior structures. A curette is passed through the intercondylar notch to capture the guide pin to ensure protection of the posterior vascular structures. A shaver is used to clear the remaining fibers before pulling up the suture that will pass the PCL graft. A worm suture passer is then passed up the tibial drill hole, curved out onto the joint surface, making it easy to grab the suture and pull it out through the anterior medial portal. A femoral PCL guide is then brought into place and placed just at the footprint of the PCL insertion, five to seven millimeters posterior to the articular cartilage margin. A guide pin is then passed from outside in exiting at the guide tip. This is then over drilled with a 10 millimeter drill and a suture is passed down the drill hole exiting out the anterior medial portal.</p>
+              
+              <p class="text-stone-500 italic mb-4 mt-6">[03:33]</p>
+              <p>A Gore-Tex chafer is then brought through the tibial drill hole to smooth the edges of the drill hole to ensure that there's no sharp edge that might impinge on the graft. A sterilized bone patellar tendon bone allograft is defrosted. Each end is then trimmed to ensure that it will fit through a 10 millimeter sizer. Sutures are loaded at each end and then the graft is brought through the tibial drill hole into the knee joint itself using a fort guide to help pass the sutures. Next, a grasper is passed down the femoral drill hole. The sutures are grasped and the bone block is passed up into the femoral drill hole under direct visualization. By first passing a guide pin down next to the bone block, tapping the hole, the bone block in the femoral drill hole is then secured with a 10 millimeter screw. The sutures exiting the tibia are then grasped with a clamp. The knee is then cycled through multiple cycles to remove stretch, and then at 30 degrees a guide pin is passed up the tibial hole next to the bone block and then an 11 millimeter by 30 millimeter screw is used to fix the tibial bone block in the hole. Fluoroscopy is used to confirm the screw position directly in opposition to the bone block in the tibial tunnel. The sutures exiting the bone block are then additionally secured with an Arthrex push lock anchor to ensure belt and suspenders fixation on the tibial side.</p>
+              
+              <p class="text-stone-500 italic mb-4 mt-6">[05:24]</p>
+              <p>After fixation of both ends of the PCL, the stability is again tested. The posterior draw has been eliminated, but the anterior draw has not been. Therefore, attention is turned to the anterior cruciate ligament. The fibers that appear to be intact were clearly insufficient to provide adequate stability to the knee and therefore additional debridement is carried out revealing the complete rupture of the ACL within the sheath necessitating ACL reconstruction. ACL reconstruction is initiated by fully debriding the lateral wall. A curved gaff is brought from the anterior medial portal through the intercondylar notch exiting at the iliotibial band. A small puncture wound is placed directly over the tip of the gaff. A rear entry guide is hooked onto the gaff and brought into the knee with the midpoint of the ACL insertion on the medial wall of the lateral femoral condyle. The guide pin is then drilled from outside in. Visualizing through the anterior medial portal confirms that the guide pin is slightly too low and slightly too posterior to be at the anatomic insertion site for the ACL. Therefore, using a parallel drill guide, a second pin is placed at the anatomic insertion site for the ACL.</p>
+              
+              <p class="text-stone-500 italic mb-4 mt-6">[06:51]</p>
+              <p>This guide pin is then over drilled with an 11 millimeter drill. A suture is passed down through the femoral drill hole, exiting the anterior medial portal. Attention is then turned to the tibial footprint. A poodoo guide is then brought into the knee to match the tibial footprint of the ACL, approximately seven millimeters anterior to the PCL and just on the lateral border of the medial tibial spine. A guide pin is then passed from the anterior medial aspect of the tibial cortex up to the tip of the poodoo guide. This is then over drilled with an 11 millimeter drill.</p>
+              
+              <p class="text-stone-500 italic mb-4 mt-6">[07:34]</p>
+              <p>A Gore-Tex tamper is then carried up through the tibial drill hole and then through the femoral drill hole, smoothing each edge to ensure that there are no sharp edges that will impinge on the graft. Attention is then turned to the sterilized bone patellar tendon bone allograft. The bone blocks on each end are trimmed to ensure that they fit through a 10 millimeter sizer and the distal end is shortened to approximately 20 millimeters in length. Two drill holes are placed in each bone block. Number five sutures pass through each drill hole. The bone patellar tendon bone graft is then brought onto the field, hooked into the Gore-Tex suture passer and pulled down into the knee. A guide pin is then placed into the femoral drill hole, taking care that the guide pin is on the anterior margin of the bone block. This is then tapped and fixed with a 10 by 23 millimeter screw.</p>
+              
+              <p class="text-stone-500 italic mb-4 mt-6">[08:43]</p>
+              <p>The sutures exiting the tibial drill hole are then grasped with a large clamp and the knee is cycled through multiple cycles with the knee held at 30 degrees with posterior pressure on the tibia. The distal bone block is fixed with a 10 x 30 millimeter screw. The sutures exiting the bone block are then additionally fixed with an Arthrex push lock suture anchor. After final fixation, joint stability is retested. The Lachman's has been eliminated. The posterior and anterior draw have been eliminated.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-stone-100 py-8">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="flex justify-between items-center">
+        <a href="/techniques/meniscus-prep" class="text-stone-600 hover:text-stone-900 inline-flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          Meniscus Prep
+        </a>
+        <a href="/techniques/makoplasty" class="text-emerald-600 hover:text-emerald-700 inline-flex items-center gap-2">
+          Next: Makoplasty
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

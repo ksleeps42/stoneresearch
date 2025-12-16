@@ -1,0 +1,143 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const transcript = {
+  title: 'ACL Reconstruction Surgical Technique',
+  subtitle: 'Three-Portal Technique performed by Kevin R. Stone, MD',
+  category: 'Surgical Technique',
+  duration: '4:30',
+  relatedResearch: '/research/ligaments',
+  relatedVideo: '/videos#surgical-techniques',
+};
+---
+
+<Layout title={transcript.title + " - Transcript"}>
+  <!-- Header -->
+  <section class="bg-stone-900 text-white py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <a href="/transcripts" class="inline-flex items-center gap-2 text-stone-400 hover:text-white text-sm mb-6 transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+        All Transcripts
+      </a>
+      
+      <div class="flex items-center gap-3 mb-4">
+        <span class="text-xs px-3 py-1 bg-amber-500/20 text-amber-300 rounded-full">{transcript.category}</span>
+        <span class="text-stone-400 text-sm">{transcript.duration}</span>
+      </div>
+      
+      <h1 class="font-display text-display-sm md:text-display-md text-white mb-3">
+        {transcript.title}
+      </h1>
+      <p class="text-lg text-stone-300">{transcript.subtitle}</p>
+    </div>
+  </section>
+
+  <!-- Transcript Content -->
+  <section class="py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="prose prose-stone max-w-none">
+        <div class="bg-stone-50 border-l-4 border-amber-500 p-6 mb-8 not-prose">
+          <p class="text-sm text-stone-600">
+            <strong class="text-stone-900">Video Overview:</strong> This video demonstrates Dr. Stone's 
+            three-portal technique for ACL reconstruction using donor allograft tissue, including notch 
+            preparation, tunnel placement, and graft fixation.
+          </p>
+        </div>
+
+        <h2 class="font-display text-xl text-stone-900 mb-4">Full Transcript</h2>
+        
+        <div class="space-y-6 text-stone-700 leading-relaxed">
+          <p class="timestamp-text">
+            <span class="timestamp">[00:05]</span>
+            Our technique of ACL reconstruction involves what we call a three portal technique. After 
+            arthroscopic treatment of other problems within the knee, such as treatment of articular 
+            cartilage defects and torn meniscus cartilages, the ACL is approached by first cleaning 
+            out the intercondylar notch.
+          </p>
+          
+          <p>
+            Taking care to obtain excellent visualization of the ACL insertion sites on the tibia and 
+            on the femur wall. Notch plasty is performed only if necessary to improve visualization or 
+            if there is a particularly tight intercondylar notch.
+          </p>
+          
+          <p>
+            Once the notch is cleared, a guide is passed from the anterior medial portal exiting 
+            posterolaterally at the level of the iliotibial band. A small puncture wound is made over 
+            the tip of the guide through the skin.
+          </p>
+          
+          <p class="timestamp-text">
+            <span class="timestamp">[01:15]</span>
+            The rear entry guide is hooked onto the small puncture wound, and the tibial tunnel is then 
+            drilled from outside-in. This technique permits excellent placement of the tibial tunnel at 
+            the anatomic insertion site of the native ACL.
+          </p>
+          
+          <p>
+            The femoral tunnel is then drilled through the tibial tunnel, taking care to position the 
+            tunnel at the anatomic femoral insertion site. Tunnel position is confirmed both 
+            arthroscopically and with fluoroscopy.
+          </p>
+          
+          <p class="timestamp-text">
+            <span class="timestamp">[02:30]</span>
+            The donor tendon graft—which has been sterilized and prepared—is then passed through the 
+            tibial tunnel and into the femoral tunnel. We prefer to use allograft tissue to avoid 
+            harvest damage to the patient's own tissues.
+          </p>
+          
+          <p>
+            The graft is secured on the femoral side first, typically with an interference screw or 
+            suspensory fixation device. The knee is then cycled through a full range of motion to 
+            pretension the graft.
+          </p>
+          
+          <p class="timestamp-text">
+            <span class="timestamp">[03:30]</span>
+            Tibial fixation is then performed with the knee at approximately 20 degrees of flexion, 
+            with an anterior drawer force applied to the tibia. This ensures appropriate tension in 
+            the graft throughout the range of motion.
+          </p>
+          
+          <p>
+            Final stability testing confirms elimination of the pivot shift and anterior drawer. The 
+            portals are closed, and the patient is placed in a hinged knee brace for the early 
+            rehabilitation period.
+          </p>
+          
+          <p>
+            At the Stone Clinic in San Francisco, we treat athletes of all ages and in all sports and 
+            have extensive experience rebuilding anterior cruciate ligaments to return patients to 
+            active, stable knees.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Links -->
+  <section class="py-12 bg-stone-50 border-t border-stone-200">
+    <div class="max-w-4xl mx-auto px-6">
+      <h3 class="font-display text-lg text-stone-900 mb-6">Related Content</h3>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href={transcript.relatedResearch} class="p-5 bg-white border border-stone-200 rounded-sm hover:border-amber-400 transition-colors group">
+          <span class="text-xs text-amber-600 uppercase tracking-wider">Research</span>
+          <p class="font-display text-stone-900 group-hover:text-amber-600 transition-colors mt-1">Ligaments & Tendons Studies</p>
+        </a>
+        <a href={transcript.relatedVideo} class="p-5 bg-white border border-stone-200 rounded-sm hover:border-amber-400 transition-colors group">
+          <span class="text-xs text-amber-600 uppercase tracking-wider">Video</span>
+          <p class="font-display text-stone-900 group-hover:text-amber-600 transition-colors mt-1">Watch Full Video</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .timestamp {
+    @apply text-xs font-mono text-amber-600 bg-amber-50 px-2 py-0.5 rounded mr-2;
+  }
+</style>

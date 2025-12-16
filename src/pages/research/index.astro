@@ -1,0 +1,275 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// All papers from the PDFs
+const papers = [
+  {
+    id: 'paste-graft-2020',
+    title: 'Osteochondral Autograft Plugs versus Paste Graft: Ex Vivo Morselization Increases Chondral Matrix Production',
+    authors: ['Daniel Grande', 'Todd Goldstein', 'Thomas J. Turek', 'Susan Hennessy', 'Ann W. Walgenbach', 'Le Hanh Dung Do', 'David Greene', 'Kevin R. Stone'],
+    journal: 'Cartilage',
+    year: 2020,
+    category: 'cartilage',
+    categoryLabel: 'Articular Cartilage',
+    keyFinding: 'Morselization increases chondrocyte proliferation 34-80%; contradicts long-held beliefs that impaction trauma leads to cell death.',
+    abstract: 'Paste graft preparation resulted in increased mobility of chondrocytes by matrix disruption without loss of cell viability. The impaction procedure stimulated chondrocyte proliferation resulting in a cellular response to reestablish native extracellular matrix.',
+    doi: '10.1177/1947603520916552',
+  },
+  {
+    id: 'paste-graft-10-23-year',
+    title: 'Articular Cartilage Paste Graft for Severe Osteochondral Lesions of the Knee: A 10- to 23-Year Follow-up Study',
+    authors: ['Kevin R. Stone', 'Jonathan R. Pelsis', 'Kellen Na', 'Ann W. Walgenbach', 'Thomas J. Turek'],
+    journal: 'Knee Surgery, Sports Traumatology, Arthroscopy',
+    year: 2016,
+    category: 'cartilage',
+    categoryLabel: 'Articular Cartilage',
+    keyFinding: 'Median benefit time of 19.1 years; 90% reported good-excellent pain relief; delayed arthroplasty to mean age 60.2 years.',
+    abstract: 'Full-thickness articular cartilage loss can be successfully treated, reducing pain and improving function, using this single-step, inexpensive arthroscopic procedure.',
+    doi: '10.1007/s00167-016-4323-7',
+  },
+  {
+    id: 'paste-graft-2-12-year',
+    title: 'Articular Cartilage Paste Grafting to Full-Thickness Articular Cartilage Knee Joint Lesions: A 2- to 12-Year Follow-up',
+    authors: ['Kevin R. Stone', 'Ann W. Walgenbach', 'Abhi Freyer', 'Thomas J. Turek', 'Donald P. Speer'],
+    journal: 'Arthroscopy',
+    year: 2006,
+    category: 'cartilage',
+    categoryLabel: 'Articular Cartilage',
+    keyFinding: '85.6% success rate; 63.6% of biopsies showed strong cartilage regeneration evidence.',
+    abstract: 'Paste grafting is a low-cost, 1-stage arthroscopic treatment for patients with Outerbridge classification grade IV arthritic chondral lesions offering excellent, long-lasting pain relief.',
+    doi: '10.1016/j.arthro.2005.12.051',
+  },
+  {
+    id: 'paste-graft-technique-1997',
+    title: 'Surgical Technique for Articular Cartilage Transplantation to Full-Thickness Cartilage Defects in the Knee Joint',
+    authors: ['Kevin R. Stone', 'Ann Walgenbach'],
+    journal: 'Operative Techniques in Orthopaedics',
+    year: 1997,
+    category: 'cartilage',
+    categoryLabel: 'Articular Cartilage',
+    keyFinding: 'Original description of the paste graft surgical technique.',
+    abstract: 'The mixture of articular cartilage and cancellous bone appears to provide a supportive matrix for cartilage formation. Pain relief is excellent if careful surgical technique and defined rehabilitation program is followed.',
+  },
+  {
+    id: 'meniscus-survival-arthritic',
+    title: 'Meniscus Allograft Survival in Patients with Moderate to Severe Unicompartmental Arthritis: A 2- to 7-Year Follow-up',
+    authors: ['Kevin R. Stone', 'Ann W. Walgenbach', 'Thomas J. Turek', 'Abhi Freyer', 'Martin D. Hill'],
+    journal: 'Arthroscopy',
+    year: 2006,
+    category: 'meniscus',
+    categoryLabel: 'Meniscus Cartilage',
+    keyFinding: '89.4% allograft survival rate in arthritic knees—challenging conventional contraindications of age and arthrosis.',
+    abstract: 'Meniscus allografts can survive in a joint with arthrosis, challenging the contraindications of age and arthrosis severity.',
+    doi: '10.1016/j.arthro.2005.12.045',
+  },
+  {
+    id: 'meniscus-sizing',
+    title: 'Meniscal Sizing Based on Gender, Height, and Weight',
+    authors: ['Kevin R. Stone', 'Abhi Freyer', 'Thomas Turek', 'Ann W. Walgenbach', 'Sonali Wadhwa', 'John Crues'],
+    journal: 'Arthroscopy',
+    year: 2007,
+    category: 'meniscus',
+    categoryLabel: 'Meniscus Cartilage',
+    keyFinding: 'Height, weight, and gender correlate with meniscal dimensions—simplifying tissue bank matching protocols.',
+    abstract: 'Height, weight, and gender should be considered by both tissue banks and surgeons as fast and cost-effective variables by which to predict meniscal dimensions.',
+    doi: '10.1016/j.arthro.2006.12.025',
+  },
+  {
+    id: 'meniscus-three-tunnel',
+    title: 'Meniscal Allografting: The Three-Tunnel Technique',
+    authors: ['Kevin R. Stone', 'Ann W. Walgenbach'],
+    journal: 'Arthroscopy',
+    year: 2003,
+    category: 'meniscus',
+    categoryLabel: 'Meniscus Cartilage',
+    keyFinding: 'Improved arthroscopic technique securing allograft to tibia at 3 sites.',
+    abstract: 'An improved arthroscopic technique of meniscal transplantation that simplifies the surgical procedure and secures the allograft to the tibia at 3 sites.',
+    doi: '10.1053/jars.2003.50133',
+  },
+  {
+    id: 'meniscus-lessons-learned',
+    title: 'Lessons Learned From Our First 100 Meniscus Allograft Transplants in Arthritic Knees',
+    authors: ['Kevin R. Stone', 'Ann W. Walgenbach', 'Abhi Freyer'],
+    journal: 'Humana Press - Musculoskeletal Tissue Regeneration',
+    year: 2008,
+    category: 'meniscus',
+    categoryLabel: 'Meniscus Cartilage',
+    keyFinding: 'Comprehensive review demonstrating allografts can survive in arthritic knees and delay joint replacement.',
+    abstract: 'Meniscus transplantation is a rewarding soft tissue reconstruction that can be useful for arthritic as well as pristine knees to alleviate pain, restore function, and ultimately, delay or avoid joint arthroplasty.',
+  },
+  {
+    id: 'xenograft-acl-20-year',
+    title: 'Xenograft Bone-Patellar Tendon-Bone ACL Reconstruction: A Case Series at 20-Year Follow-up as Proof of Principle',
+    authors: ['Kevin R. Stone', 'Ann W. Walgenbach', 'Thomas J. Turek', 'John V. Crues', 'Uri Galili'],
+    journal: 'Journal of Experimental Orthopaedics',
+    year: 2023,
+    category: 'ligament',
+    categoryLabel: 'Ligaments & Tendons',
+    keyFinding: 'First demonstration that "humanized" porcine ligament can remodel into functional autologous ACL over 20 years.',
+    abstract: 'The possibility of humanizing porcine tissue opens the door to unlimited clinical material for tissue reconstructions if supported by additional clinical trials.',
+    doi: '10.1186/s40634-023-00651-7',
+  },
+  {
+    id: 'acl-3-incision',
+    title: 'Anterior Cruciate Ligament Reconstruction: 3-Incision Technique With Allograft Quad Tendon ACL Reconstruction',
+    authors: ['Kevin R. Stone'],
+    journal: 'Video Journal of Sports Medicine',
+    year: 2024,
+    category: 'ligament',
+    categoryLabel: 'Ligaments & Tendons',
+    keyFinding: 'Reproducible allograft technique using quadriceps tendon—avoiding autograft harvest damage.',
+    abstract: 'The 3-incision technique with allograft quadriceps tendon for ACL reconstruction is a reproducible surgical technique that avoids harvest from the patient\'s own body.',
+    doi: '10.1177/26350254231206141',
+  },
+  {
+    id: 'oa-guidelines-evidence',
+    title: 'Systematic Analysis of the Quality of Scientific Evidence and Conflicts of Interest in Osteoarthritis Guidelines',
+    authors: ['Joseph D. Feuerstein', 'Jonathan R. Pelsis', 'Samuel Lloyd', 'Adam S. Cheifetz', 'Kevin R. Stone'],
+    journal: 'Seminars in Arthritis and Rheumatism',
+    year: 2016,
+    category: 'methodology',
+    categoryLabel: 'Evidence & Methodology',
+    keyFinding: '50% of hip/knee OA guidelines based on low-quality evidence; 46% don\'t disclose conflicts of interest.',
+    abstract: 'Future hip/knee osteoarthritis guideline development committees should strive to improve the transparency and quality of evidence used to formulate practice guidelines.',
+    doi: '10.1016/j.semarthrit.2015.09.002',
+  },
+];
+
+const categories = [
+  { id: 'all', label: 'All Studies', count: papers.length },
+  { id: 'cartilage', label: 'Articular Cartilage', count: papers.filter(p => p.category === 'cartilage').length },
+  { id: 'meniscus', label: 'Meniscus', count: papers.filter(p => p.category === 'meniscus').length },
+  { id: 'ligament', label: 'Ligaments', count: papers.filter(p => p.category === 'ligament').length },
+  { id: 'methodology', label: 'Methodology', count: papers.filter(p => p.category === 'methodology').length },
+];
+
+const getCategoryClass = (category: string) => {
+  switch (category) {
+    case 'cartilage': return 'category-badge--cartilage';
+    case 'meniscus': return 'category-badge--meniscus';
+    case 'ligament': return 'category-badge--ligament';
+    case 'methodology': return 'category-badge--methodology';
+    default: return '';
+  }
+};
+---
+
+<Layout title="Research Library" description="Browse peer-reviewed research from the Stone Research Foundation">
+  <!-- Hero -->
+  <section class="bg-stone-900 text-white py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-3xl">
+        <p class="text-accent-400 font-medium uppercase tracking-wider text-sm mb-4">
+          Stone Research Foundation
+        </p>
+        <h1 class="font-display text-display-md md:text-display-lg text-white mb-4">
+          Research Library
+        </h1>
+        <p class="text-lg text-stone-300 leading-relaxed">
+          {papers.length} peer-reviewed studies spanning 27+ years of orthopaedic research in biologic joint repair.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Filter + Papers -->
+  <section class="py-12 md:py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <!-- Category Filters -->
+      <div class="flex flex-wrap gap-2 mb-12 pb-8 border-b border-stone-200">
+        {categories.map(cat => (
+          <button 
+            class="filter-btn px-4 py-2 text-sm font-medium rounded-full border transition-colors data-[active=true]:bg-stone-900 data-[active=true]:text-white data-[active=true]:border-stone-900 border-stone-200 text-stone-600 hover:border-stone-300"
+            data-category={cat.id}
+            data-active={cat.id === 'all' ? 'true' : 'false'}
+          >
+            {cat.label} <span class="text-stone-400 ml-1">({cat.count})</span>
+          </button>
+        ))}
+      </div>
+      
+      <!-- Papers List -->
+      <div class="space-y-6" id="papers-list">
+        {papers.map(paper => (
+          <article 
+            class="research-card p-6 md:p-8"
+            data-category={paper.category}
+          >
+            <div class="flex flex-col md:flex-row md:items-start gap-6">
+              <div class="flex-1 min-w-0">
+                <div class="flex flex-wrap items-center gap-3 mb-3">
+                  <span class={`category-badge ${getCategoryClass(paper.category)}`}>
+                    {paper.categoryLabel}
+                  </span>
+                  <span class="text-sm text-stone-500">{paper.year}</span>
+                </div>
+                
+                <h2 class="font-display text-xl md:text-2xl text-stone-900 mb-3 leading-tight">
+                  <a href={`/research/paper/${paper.id}`} class="hover:text-accent-600 transition-colors">
+                    {paper.title}
+                  </a>
+                </h2>
+                
+                <p class="text-sm text-stone-500 mb-4">
+                  {paper.authors.join(', ')}
+                </p>
+                
+                <p class="text-stone-600 text-sm leading-relaxed mb-4">
+                  {paper.abstract}
+                </p>
+                
+                <div class="bg-accent-50 border-l-2 border-accent-400 px-4 py-3 mb-4">
+                  <p class="text-sm text-stone-700">
+                    <span class="font-semibold text-accent-700">Key Finding:</span> {paper.keyFinding}
+                  </p>
+                </div>
+                
+                <div class="flex flex-wrap items-center gap-4 text-sm">
+                  <span class="text-stone-500">
+                    <span class="font-medium text-stone-700">{paper.journal}</span>
+                  </span>
+                  {paper.doi && (
+                    <a 
+                      href={`https://doi.org/${paper.doi}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-accent-600 hover:text-accent-700 transition-colors inline-flex items-center gap-1"
+                    >
+                      View Publication
+                      <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                      </svg>
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // Simple filter functionality
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const category = btn.getAttribute('data-category');
+      
+      // Update active state
+      document.querySelectorAll('.filter-btn').forEach(b => b.setAttribute('data-active', 'false'));
+      btn.setAttribute('data-active', 'true');
+      
+      // Filter papers
+      document.querySelectorAll('#papers-list article').forEach(paper => {
+        const paperCategory = paper.getAttribute('data-category');
+        if (category === 'all' || paperCategory === category) {
+          paper.style.display = 'block';
+        } else {
+          paper.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>

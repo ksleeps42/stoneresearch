@@ -1,0 +1,157 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const transcript = {
+  title: 'Why Support the Stone Research Foundation',
+  subtitle: 'Our Mission, Research Programs, and Impact',
+  category: 'Foundation',
+  duration: '1:30',
+  relatedPage: '/donors',
+  relatedVideo: '/videos#presentations',
+};
+---
+
+<Layout title={transcript.title + " - Transcript"}>
+  <!-- Header -->
+  <section class="bg-stone-900 text-white py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <a href="/transcripts" class="inline-flex items-center gap-2 text-stone-400 hover:text-white text-sm mb-6 transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+        All Transcripts
+      </a>
+      
+      <div class="flex items-center gap-3 mb-4">
+        <span class="text-xs px-3 py-1 bg-accent-500/20 text-accent-300 rounded-full">{transcript.category}</span>
+        <span class="text-stone-400 text-sm">{transcript.duration}</span>
+      </div>
+      
+      <h1 class="font-display text-display-sm md:text-display-md text-white mb-3">
+        {transcript.title}
+      </h1>
+      <p class="text-lg text-stone-300">{transcript.subtitle}</p>
+    </div>
+  </section>
+
+  <!-- Transcript Content -->
+  <section class="py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="prose prose-stone max-w-none">
+        <div class="bg-accent-50 border-l-4 border-accent-500 p-6 mb-8 not-prose">
+          <p class="text-sm text-stone-600">
+            <strong class="text-stone-900">The Mission:</strong> Accelerating healing, treating, preventing, 
+            and curing arthritis through 30 years of developing science and techniques—now enhanced with 
+            stem cells, hydrogels, growth factors, and personalized medicine.
+          </p>
+        </div>
+
+        <h2 class="font-display text-xl text-stone-900 mb-4">Full Transcript</h2>
+        
+        <div class="space-y-6 text-stone-700 leading-relaxed">
+          <p class="timestamp-text">
+            <span class="timestamp">[00:00]</span>
+            At the Stone Research Foundation, we're dedicated to pushing forward the science, accelerating 
+            healing, treating, preventing, and curing arthritis.
+          </p>
+          
+          <p>
+            We are teed up to solve a number of these problems with a <strong>30 year history</strong> of 
+            developing the science and techniques.
+          </p>
+          
+          <div class="bg-stone-50 border border-stone-200 p-5 rounded-sm my-6 not-prose">
+            <h4 class="font-medium text-stone-900 mb-3">Current Research Focus Areas</h4>
+            <ul class="space-y-2 text-sm text-stone-600">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Optimizing techniques with stem cells, hydrogels, and growth factors</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Personalized medicine research—testing each patient's tissues individually</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-accent-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Programs to diminish patient atrophy after surgery</span>
+              </li>
+            </ul>
+          </div>
+          
+          <p class="timestamp-text">
+            <span class="timestamp">[00:35]</span>
+            New funding now to optimize those techniques by the addition of stem cells, hydrogels, and 
+            other growth factors. Personalized medicine research where we can take each patient's tissues 
+            and individually test them. And a number of other research programs that will help diminish the 
+            patient's atrophy after surgery.
+          </p>
+          
+          <p>
+            We would love to have your support and the reason to donate to the Stone Research Foundation is 
+            that we're <strong>lean, efficient, and quite leveraged</strong> in order to accomplish the goals 
+            of solving arthritis and accelerating healing.
+          </p>
+          
+          <p class="timestamp-text">
+            <span class="timestamp">[01:00]</span>
+            Your support will be well used to achieve those goals, and we very much appreciate thinking about 
+            how we can keep you active—you, your children, and your grandchildren—<strong>playing to age 100</strong> 
+            the sports you love.
+          </p>
+          
+          <p class="text-lg font-medium text-stone-900">
+            Thank you.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-12 bg-accent-500 text-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h3 class="font-display text-display-sm text-white mb-4">Support Our Research</h3>
+      <p class="text-accent-100 mb-8 max-w-2xl mx-auto">
+        Your contribution helps pioneer treatments that keep people active for life. Join our community 
+        of supporters advancing the science of joint repair.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://stoneresearch.org/donate" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-accent-600 font-medium hover:bg-accent-50 transition-colors">
+          Make a Gift Today
+        </a>
+        <a href="/donors" class="inline-flex items-center gap-2 px-8 py-4 border-2 border-white text-white font-medium hover:bg-white/10 transition-colors">
+          View Our Donors
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Links -->
+  <section class="py-12 bg-stone-50 border-t border-stone-200">
+    <div class="max-w-4xl mx-auto px-6">
+      <h3 class="font-display text-lg text-stone-900 mb-6">Learn More</h3>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href={transcript.relatedPage} class="p-5 bg-white border border-stone-200 rounded-sm hover:border-accent-400 transition-colors group">
+          <span class="text-xs text-accent-600 uppercase tracking-wider">Community</span>
+          <p class="font-display text-stone-900 group-hover:text-accent-600 transition-colors mt-1">Friends of the Foundation</p>
+        </a>
+        <a href="/research" class="p-5 bg-white border border-stone-200 rounded-sm hover:border-accent-400 transition-colors group">
+          <span class="text-xs text-accent-600 uppercase tracking-wider">Science</span>
+          <p class="font-display text-stone-900 group-hover:text-accent-600 transition-colors mt-1">Research Library</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .timestamp {
+    @apply text-xs font-mono text-accent-600 bg-accent-50 px-2 py-0.5 rounded mr-2;
+  }
+</style>

@@ -1,0 +1,107 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const video = {
+  title: 'Stone Ankle Ligament Repair',
+  vimeoId: '663441968',
+  category: 'Ankle Procedures',
+  duration: '8:45',
+  surgeon: 'Kevin R. Stone, MD',
+  year: '2019',
+  location: 'San Francisco, CA'
+};
+---
+
+<Layout title={video.title}>
+  <section class="bg-stone-900 text-white py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <a href="/techniques" class="inline-flex items-center gap-2 text-stone-400 hover:text-white text-sm mb-6 transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Back to Surgical Techniques
+      </a>
+      <div class="flex items-center gap-3 mb-4">
+        <span class="px-3 py-1 bg-blue-500/20 text-blue-400 text-sm font-medium rounded-full">{video.category}</span>
+        <span class="text-stone-500">•</span>
+        <span class="text-stone-400 text-sm">{video.duration}</span>
+      </div>
+      <h1 class="font-display text-display-sm md:text-display-md text-white mb-4">{video.title}</h1>
+      <p class="text-stone-400">Performed by {video.surgeon} · {video.year} · {video.location}</p>
+    </div>
+  </section>
+
+  <section class="bg-stone-800 py-8">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="aspect-video relative rounded-sm overflow-hidden bg-stone-900">
+        <iframe src={`https://player.vimeo.com/video/${video.vimeoId}?h=0&title=0&byline=0&portrait=0`} class="absolute inset-0 w-full h-full" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-12">
+        <div class="md:col-span-1">
+          <div class="sticky top-24">
+            <h3 class="font-display text-lg text-stone-900 mb-4">Quick Facts</h3>
+            <dl class="space-y-4 text-sm">
+              <div><dt class="text-stone-500">Procedure Type</dt><dd class="font-medium text-stone-900">Ligament Repair</dd></div>
+              <div><dt class="text-stone-500">Technique</dt><dd class="font-medium text-stone-900">Modified Brostrom-Gould</dd></div>
+              <div><dt class="text-stone-500">Indication</dt><dd class="font-medium text-stone-900">Chronic Ankle Instability</dd></div>
+              <div><dt class="text-stone-500">Experience</dt><dd class="font-medium text-stone-900">25+ years</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="md:col-span-2">
+          <h2 class="font-display text-2xl text-stone-900 mb-6">Summary</h2>
+          <div class="prose prose-stone max-w-none mb-12">
+            <p>The Stone Ankle Ligament Repair is a modified Brostrom-Gould procedure for chronic ankle instability. This technique has been refined over 25 years of clinical practice and offers excellent stability restoration without the need for tendon grafts.</p>
+            <h3>The Technique</h3>
+            <p>The procedure involves reefing the retinaculum over the sinus tarsi and securing it to the remnant anterior talofibular ligament without ever fully exposing the ligament. This preserves the local biology while providing robust mechanical reinforcement.</p>
+          </div>
+
+          <h2 class="font-display text-2xl text-stone-900 mb-6">Transcript</h2>
+          <div class="bg-stone-50 rounded-sm p-6 md:p-8">
+            <div class="prose prose-stone prose-sm max-w-none">
+              <p class="text-stone-500 italic mb-4">[00:00]</p>
+              <p>Hi there, I'm Kevin Stone, orthopedic surgeon at the Stone Clinic in San Francisco. And today we have a 41-year-old squash player with a clearly unstable ankle. He's loud, he has a loud talar shuck and you can see the ankle going in and out side to side as well. So he has some loose bodies. We're gonna do a scope and clear away some of the loose bodies and then we'll do our modified procedure, which I can just call a Stone reefing repair, where we take the retinaculum over the sinus tarsi and reef it to the remnant anterior talofibular ligament without ever really exposing the ligament. And we've done this procedure now for 25 years and it's been incredibly effective. Here's your ATF, tip of the fibula and the sinus tarsi lives right in here. So all we're gonna do is reef the retinaculum of the sinus tarsi to the ATF. We call this a Stone reefing repair. We find the skin lines here, usually make a small incision in the skin lines. And there's almost always a small vessel that we encounter. And there's the vessel, it's always there. And sometimes we can preserve it.</p>
+              
+              <p class="text-stone-500 italic mb-4 mt-6">[01:32]</p>
+              <p>So here I'm just dissecting down to the retinaculum. I'm actually trying to preserve that little vessel because sometimes there's a little peripheral nerve with it, so we just pay attention to where it is and sometimes we end up having to cut it, but I always like to see if I can just leave it alone. So the move here is to come right down to the retinaculum, feel the sinus tarsi, and put your finger up and feel the ligament. And you can always feel the stump of the ligament with your finger. And some ligaments of course are intact completely but stretched. And some are torn and they're scarred down. We don't really care because what we're gonna do is not even expose it, but just feel it. So ligament's up here, retinaculum, sinus tarsi is here. And all we do is divide the retinaculum like that.</p>
+              
+              <p class="text-stone-500 italic mb-4 mt-6">[02:35]</p>
+              <p>So we've got a good piece of retinaculum there. We wanna make sure that we're low enough. So we're gonna get to the back of the ligament. Just need a little more length on the incision there. I just wanna make sure I've divided this low enough here. There we go. So now what we're gonna do is we're gonna take this tissue and we're gonna reef it up to the stump and the remaining anterior talofibular ligament. And that's gonna suck up this whole side of the ankle joint and it works incredibly effectively. So I haven't even exposed the ATF, I can feel it, but I haven't exposed it. So now we take number two Vicryl suture—strong, but it dissolves, which is what we want it to do, is go away over time. And I reach up to the anterior portion of the ATF. And so I've grabbed a big hunk of ATF and just grabbing retinaculum and grabbing up here as deep as I can go into the ATF, not even exposing it.</p>
+              
+              <p class="text-stone-500 italic mb-4 mt-6">[03:40]</p>
+              <p>You can see what it's gonna do. I'm gonna add one more layer of that, just being sure that we've got as much of it as we can get. Okay, clamp that. So you can see when we pull this together, which I'm not gonna do yet, it's gonna suck up the entire retinaculum to the remaining ligament and close that gap. But we're leaving him down here in plantar flexion inversion for now. But we'll tie him in supination eversion so I can feel the base of the ligament here at the talus. Now I'm gonna move my way posterior. So I've got my top suture here. Now I'm moving down one layer, grabbing retinaculum here, grabbing deep. And if I'm at all concerned that I haven't gotten high enough into ligament, I can always take another bite of the apple here coming north. Just making sure that I've got all of that tissue again, moving here, coming up into here. Now we have three stitches here. I may use a fourth in here. Let's go ahead and tie these and then I'll tie a fourth. So now we're gonna bring the foot up into eversion supination.</p>
+              
+              <p class="text-stone-500 italic mb-4 mt-6">[04:56]</p>
+              <p>Here I'm snugging that all together. Okay, now let's come to the second one. You can see what's gonna happen. Sinus tarsi is gonna come right up to the remnant of the ligament and close the gap there. You can see sinus tarsi coming right up to the anterior part of the ligament. So we've what we've done is we've brought the sinus tarsi retinaculum, which I divided in line here, and then we've reefed it up into the anterior talofibular ligament. And we placed the sutures in pronation inversion and we've tied them in supination eversion. And now what I'm gonna do is just test the stability. And what you'll see is that there's just no more movement of the talus going forward, as hard as I can pull. So it very effectively shuts down the anterior talofibular ligament laxity. Same side to side. So he's got a stable ankle there now.</p>
+              
+              <p class="text-stone-500 italic mb-4 mt-6">[05:53]</p>
+              <p>And then what I do is I just feel it with my finger to make sure there's no little soft spots at all. And if I'm at all concerned, I can put a second or third or fourth suture in. That feels really great. We call that a Stone reefing repair. I've done it now for over 25 years. I don't know of any one of these that have failed except for new trauma. And we track our patients over all these years with sending them questionnaires to find out if they've had ligamentous laxity. And then we ask them to come back for an exam and check to see that they're stable over the years as well. And that that ligament, that soft tissue repair really stops the anterior drawer without doing a dissection of the fibula or the talus, without dissecting out the ATF, which I think normally when it tears tends to want to heal in scar tissue.</p>
+              
+              <p class="text-stone-500 italic mb-4 mt-6">[06:47]</p>
+              <p>And what we're doing, instead of trying to recreate a ligament, we're just taking the retinaculum from below, reefing all of that together like taking a pleat in a shirt. We'll just use a routine closure with two-oh Vicryl and three-oh Quill because we always worry about incisions around the foot and ankle. We also add glue in order to seal the incision. The postoperative program is very well outlined at stoneclinic.com, but it's quite specific where we have the patient in physical therapy the next day, starting with soft tissue work in order to reduce swelling and proprioception exercises, stabilized in a boot where we protect them in a boot for a month. And then progressively wean off boots, progressing their exercise program.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-stone-100 py-8">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="flex justify-between items-center">
+        <a href="/techniques/achilles-repair" class="text-stone-600 hover:text-stone-900 inline-flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          Achilles Repair
+        </a>
+        <a href="/techniques" class="text-stone-600 hover:text-stone-900 inline-flex items-center gap-2">
+          All Techniques
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,334 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const transcripts = [
+  // Surgical Techniques
+  {
+    slug: 'acl-reconstruction-technique',
+    title: 'ACL Reconstruction Surgical Technique',
+    category: 'Surgical Technique',
+    categoryColor: 'amber',
+    duration: '4:30',
+    description: 'Three-portal technique for ACL reconstruction performed by Dr. Kevin R. Stone',
+  },
+  {
+    slug: 'acl-repair',
+    title: 'Anterior Cruciate Ligament (ACL) Repair',
+    category: 'Surgical Technique',
+    categoryColor: 'amber',
+    duration: '2:15',
+    description: 'Primary ACL repair using suture anchors and growth factors',
+  },
+  {
+    slug: 'posterolateral-corner-reconstruction',
+    title: 'Posterolateral Corner Reconstruction',
+    category: 'Surgical Technique',
+    categoryColor: 'amber',
+    duration: '4:20',
+    description: 'Anatomic reconstruction using anterior tibialis tendon allograft',
+  },
+  {
+    slug: 'knee-dislocation-reconstruction',
+    title: 'Knee Dislocation: ACL & PCL Reconstruction',
+    category: 'Surgical Technique',
+    categoryColor: 'amber',
+    duration: '8:45',
+    description: 'Multi-ligament reconstruction in a big mountain skier',
+  },
+  {
+    slug: 'medial-meniscus-transplant',
+    title: 'Medial Meniscus Transplant Technique',
+    category: 'Surgical Technique',
+    categoryColor: 'green',
+    duration: '5:15',
+    description: 'Step-by-step medial meniscus allograft transplantation',
+  },
+  {
+    slug: 'lateral-meniscus-transplant',
+    title: 'Lateral Meniscus Transplant Technique',
+    category: 'Surgical Technique',
+    categoryColor: 'green',
+    duration: '4:45',
+    description: 'Lateral meniscus replacement with rim preservation',
+  },
+  {
+    slug: 'meniscus-three-tunnel',
+    title: 'Meniscus Transplant: Three-Tunnel Technique',
+    category: 'Surgical Technique',
+    categoryColor: 'green',
+    duration: '1:30',
+    description: 'Outpatient arthroscopic meniscus replacement',
+  },
+  {
+    slug: 'paste-graft-surgical',
+    title: 'Articular Cartilage Paste Grafting',
+    category: 'Surgical Technique',
+    categoryColor: 'emerald',
+    duration: '2:00',
+    description: 'Paste graft technique for medial femoral condyle lesions',
+  },
+  {
+    slug: 'ankle-ligament-repair',
+    title: 'Stone Ankle Ligament Repair',
+    category: 'Surgical Technique',
+    categoryColor: 'orange',
+    duration: '6:30',
+    description: 'Modified Brostrum-Gould procedure refined over 25 years',
+  },
+  // Educational
+  {
+    slug: 'acl-injury-overview',
+    title: 'Anterior Cruciate Ligament Injury Overview',
+    category: 'Educational',
+    categoryColor: 'blue',
+    duration: '2:00',
+    description: 'Understanding ACL anatomy, injury mechanisms, and treatment',
+  },
+  {
+    slug: 'torn-meniscus-overview',
+    title: 'Torn Meniscus Cartilage Overview',
+    category: 'Educational',
+    categoryColor: 'blue',
+    duration: '3:00',
+    description: 'Comprehensive guide to meniscus tears and treatment options',
+  },
+  {
+    slug: 'knee-treatments-overview',
+    title: 'Knee Joint Treatments Overview',
+    category: 'Educational',
+    categoryColor: 'blue',
+    duration: '2:30',
+    description: 'Complete overview of knee anatomy and treatment options',
+  },
+  {
+    slug: 'total-knee-replacement',
+    title: 'Total Knee Replacement',
+    category: 'Educational',
+    categoryColor: 'blue',
+    duration: '4:00',
+    description: 'When artificial replacement is needed and treatment options',
+  },
+  {
+    slug: 'paste-graft-interview',
+    title: 'Paste Graft Technique Interview',
+    category: 'Educational',
+    categoryColor: 'blue',
+    duration: '3:30',
+    description: 'Dr. Stone explains the technique with 17+ year follow-up data',
+  },
+  {
+    slug: 'biologic-meniscus-transplantation',
+    title: 'Biologic Joint Replacement: Meniscus',
+    category: 'Educational',
+    categoryColor: 'blue',
+    duration: '3:15',
+    description: 'How meniscus transplantation changed arthritis treatment',
+  },
+  {
+    slug: 'rehabilitation-arthritic-patients',
+    title: 'Rehabilitation for Arthritic Patients',
+    category: 'Educational',
+    categoryColor: 'teal',
+    duration: '4:30',
+    description: 'Physical therapy, weight optimization, and exercise protocols',
+  },
+  {
+    slug: 'superbiologics',
+    title: 'Superbiologics: The Future of Joint Repair',
+    category: 'Research',
+    categoryColor: 'purple',
+    duration: '2:00',
+    description: 'Novel cells, growth factors, and cross-species tissue engineering',
+  },
+  // Presentations
+  {
+    slug: 'ted-bio-future',
+    title: 'TED Talk: The Bio-Future of Joint Replacement',
+    category: 'Presentation',
+    categoryColor: 'pink',
+    duration: '15:00',
+    description: "Dr. Stone's TED talk on biologic solutions for arthritis",
+  },
+  {
+    slug: 'icrs-2025-debate',
+    title: 'ICRS 2025: Adjunctive Treatments Debate',
+    category: 'Presentation',
+    categoryColor: 'pink',
+    duration: '12:00',
+    description: 'Debate on additional treatments in cartilage repair',
+  },
+  {
+    slug: 'acl-study-group-2020',
+    title: 'ACL Study Group 2020 Presentation',
+    category: 'Presentation',
+    categoryColor: 'pink',
+    duration: '10:00',
+    description: 'Research on bioactive factors and joint chemistry',
+  },
+  {
+    slug: 'srf-2025-update',
+    title: '2025 SRF Annual Update',
+    category: 'Foundation',
+    categoryColor: 'accent',
+    duration: '45:00',
+    description: 'Stone Research Foundation webinar on accelerating healing',
+  },
+  {
+    slug: 'why-support-srf',
+    title: 'Why Support the Stone Research Foundation',
+    category: 'Foundation',
+    categoryColor: 'accent',
+    duration: '1:30',
+    description: 'Overview of SRF mission and research programs',
+  },
+  // Patient Stories
+  {
+    slug: 'bioknee-endurance-athlete',
+    title: 'BioKnee Program: Endurance Athlete',
+    category: 'Patient Story',
+    categoryColor: 'rose',
+    duration: '4:00',
+    description: '48-year-old endurance athlete shares his BioKnee journey',
+  },
+  {
+    slug: 'bioknee-meniscus-paste-graft',
+    title: 'Biologic Knee Replacement Journey',
+    category: 'Patient Story',
+    categoryColor: 'rose',
+    duration: '3:30',
+    description: 'Patient experience with meniscus transplant and paste grafting',
+  },
+  {
+    slug: 'tkr-patient-experience',
+    title: 'Total Knee Replacement: Return to Activity',
+    category: 'Patient Story',
+    categoryColor: 'rose',
+    duration: '2:30',
+    description: 'Carrie shares her journey from bone-on-bone to hiking and skiing',
+  },
+  {
+    slug: 'makoplasty-patient',
+    title: 'Robot-Assisted Partial Knee Replacement',
+    category: 'Patient Story',
+    categoryColor: 'rose',
+    duration: '3:00',
+    description: 'Alaska ski instructor discusses Mako robotic surgery',
+  },
+];
+
+const categoryColors: Record<string, string> = {
+  amber: 'bg-amber-100 text-amber-800',
+  green: 'bg-green-100 text-green-800',
+  emerald: 'bg-emerald-100 text-emerald-800',
+  orange: 'bg-orange-100 text-orange-800',
+  blue: 'bg-blue-100 text-blue-800',
+  teal: 'bg-teal-100 text-teal-800',
+  purple: 'bg-purple-100 text-purple-800',
+  pink: 'bg-pink-100 text-pink-800',
+  accent: 'bg-accent-100 text-accent-800',
+  rose: 'bg-rose-100 text-rose-800',
+};
+
+const groupedTranscripts = transcripts.reduce((acc, t) => {
+  if (!acc[t.category]) acc[t.category] = [];
+  acc[t.category].push(t);
+  return acc;
+}, {} as Record<string, typeof transcripts>);
+---
+
+<Layout title="Video Transcripts">
+  <!-- Hero -->
+  <section class="bg-stone-900 text-white py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <p class="text-accent-400 font-medium uppercase tracking-wider text-sm mb-4">
+        Full Text Available
+      </p>
+      <h1 class="font-display text-display-md md:text-display-lg text-white mb-6">
+        Video Transcripts
+      </h1>
+      <p class="text-xl text-stone-300 leading-relaxed">
+        Complete transcripts of all educational videos, surgical demonstrations, 
+        and research presentations for accessibility and reference.
+      </p>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="bg-stone-800 py-6">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-wrap justify-center gap-8 text-center">
+        <div>
+          <span class="text-2xl font-display text-white">{transcripts.length}</span>
+          <span class="text-stone-400 text-sm ml-2">Transcripts</span>
+        </div>
+        <div>
+          <span class="text-2xl font-display text-white">{Object.keys(groupedTranscripts).length}</span>
+          <span class="text-stone-400 text-sm ml-2">Categories</span>
+        </div>
+        <div>
+          <span class="text-2xl font-display text-white">30+</span>
+          <span class="text-stone-400 text-sm ml-2">Years of Content</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transcript List -->
+  <section class="py-12 md:py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      {Object.entries(groupedTranscripts).map(([category, items]) => (
+        <div class="mb-12 last:mb-0">
+          <h2 class="font-display text-xl text-stone-900 mb-6 pb-3 border-b border-stone-200">
+            {category}
+            <span class="text-stone-400 font-sans text-base ml-2">({items.length})</span>
+          </h2>
+          
+          <div class="grid md:grid-cols-2 gap-4">
+            {items.map((transcript) => (
+              <a 
+                href={`/transcripts/${transcript.slug}`}
+                class="group p-5 bg-white border border-stone-200 rounded-sm hover:border-stone-400 hover:shadow-md transition-all"
+              >
+                <div class="flex items-start justify-between gap-4">
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-center gap-2 mb-2">
+                      <span class={`text-xs px-2 py-0.5 rounded-full ${categoryColors[transcript.categoryColor]}`}>
+                        {transcript.category}
+                      </span>
+                      <span class="text-xs text-stone-400">{transcript.duration}</span>
+                    </div>
+                    <h3 class="font-display text-stone-900 group-hover:text-accent-600 transition-colors mb-1">
+                      {transcript.title}
+                    </h3>
+                    <p class="text-sm text-stone-500 line-clamp-2">
+                      {transcript.description}
+                    </p>
+                  </div>
+                  <svg class="w-5 h-5 text-stone-300 group-hover:text-accent-500 transition-colors flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-stone-50 py-12 border-t border-stone-200">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="font-display text-xl text-stone-900 mb-4">Looking for Video Content?</h2>
+      <p class="text-stone-600 mb-6">
+        Watch the full videos in our comprehensive Video Library.
+      </p>
+      <a href="/videos" class="inline-flex items-center gap-2 px-6 py-3 bg-stone-900 text-white font-medium hover:bg-stone-800 transition-colors">
+        Browse Video Library
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+</Layout>

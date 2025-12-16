@@ -1,0 +1,305 @@
+---
+import Layout from '../layouts/Layout.astro';
+import VideoAccordion from '../components/VideoAccordion.jsx';
+
+const videoCategories = [
+  {
+    id: 'educational',
+    title: 'Educational Overviews',
+    description: 'Comprehensive explanations of conditions, treatments, and the science behind biologic joint replacement',
+    videos: [
+      {
+        title: 'Torn Meniscus Cartilage Overview',
+        duration: '3:00',
+        description: 'Comprehensive guide to meniscus tears, repair options, collagen implants, and replacement.',
+        category: 'Meniscus',
+        videoId: 'sgtn0N2N-JE',
+        platform: 'youtube'
+      },
+      {
+        title: 'Biologic Joint Replacement: Meniscus',
+        duration: '3:15',
+        description: 'How meniscus transplantation has revolutionized treatment of knee arthritis.',
+        category: 'Meniscus',
+        videoId: 'vvJRf7r3Xlc',
+        platform: 'youtube'
+      },
+      {
+        title: 'What is the Biologic Knee Replacement Program?',
+        duration: '4:00',
+        description: 'Overview of the BioKnee program combining meniscus transplant and cartilage regeneration.',
+        category: 'BioKnee',
+        videoId: 'G1M6li3WUBU',
+        platform: 'youtube'
+      },
+      {
+        title: 'Total Knee Replacement',
+        duration: '4:00',
+        description: 'Understanding when artificial replacement is needed and the continuum from biologic to artificial options.',
+        category: 'Joint Replacement',
+        videoId: 'JgYcPnYv394',
+        platform: 'youtube'
+      },
+      {
+        title: 'Superbiologics: The Future of Joint Repair',
+        duration: '2:00',
+        description: 'Exploring super biologic enhancements with novel cells, growth factors, and cross-species tissue engineering.',
+        category: 'Research',
+        videoId: 'HIGfkMzW81o',
+        platform: 'youtube'
+      },
+      {
+        title: 'Lifetime of Arthritis Avoided with Cartilage Regeneration',
+        duration: '3:30',
+        description: 'Patient story demonstrating long-term success of cartilage regeneration procedures.',
+        category: 'Cartilage',
+        videoId: 'P-AFPFZxz3A',
+        platform: 'youtube'
+      }
+    ]
+  },
+  {
+    id: 'presentations',
+    title: 'Presentations & Lectures',
+    description: 'Conference presentations, TED talks, and research updates from Dr. Stone',
+    videos: [
+      {
+        title: 'TED Talk: The Bio-Future of Joint Replacement',
+        duration: '15:00',
+        description: 'Dr. Stone\'s TED talk on biologic solutions for arthritis and the future of joint repair.',
+        category: 'TED Talk',
+        videoId: 'DL0_gcP15Ts',
+        platform: 'youtube'
+      },
+      {
+        title: 'ICRS 2025: Adjunctive Treatments Debate',
+        duration: '12:00',
+        description: 'Dr. Stone debates the role of additional treatments in cartilage repair at the International Cartilage Repair Society.',
+        category: 'Conference',
+        videoId: 'ltqi62bosDY',
+        platform: 'youtube'
+      },
+      {
+        title: '2025 SRF Annual Update',
+        duration: '45:00',
+        description: 'Stone Research Foundation webinar on accelerating healing and curing arthritis.',
+        category: 'Foundation',
+        videoId: 'WKTd1cDJozM',
+        platform: 'youtube'
+      },
+      {
+        title: 'Why Support the Stone Research Foundation',
+        duration: '1:30',
+        description: 'Overview of SRF\'s mission, research programs, and how donations advance the science.',
+        category: 'Foundation',
+        videoId: 'AOIEsKBBh1w',
+        platform: 'youtube'
+      }
+    ]
+  },
+  {
+    id: 'patient-stories',
+    title: 'Patient Experiences',
+    description: 'Real patients share their journey through treatment and recovery',
+    videos: [
+      {
+        title: 'BioKnee Program: Endurance Athlete',
+        duration: '4:00',
+        description: '48-year-old endurance athlete discusses multiple meniscus surgeries and biologic knee replacement.',
+        category: 'BioKnee',
+        videoId: 'UecRVA7RrWQ',
+        platform: 'youtube'
+      },
+      {
+        title: 'Robot-Assisted Partial Knee Replacement',
+        duration: '3:00',
+        description: 'Alaska ski instructor John Lyman discusses his experience with Mako robotic surgery.',
+        category: 'Joint Replacement',
+        videoId: 'pxgwQmgtzIs',
+        platform: 'youtube'
+      }
+    ]
+  }
+];
+
+const categoryColors = {
+  'ACL/Ligaments': 'bg-blue-100 text-blue-800',
+  'Meniscus': 'bg-green-100 text-green-800',
+  'Cartilage': 'bg-purple-100 text-purple-800',
+  'Ankle': 'bg-orange-100 text-orange-800',
+  'General': 'bg-stone-100 text-stone-800',
+  'Joint Replacement': 'bg-red-100 text-red-800',
+  'Rehabilitation': 'bg-teal-100 text-teal-800',
+  'Research': 'bg-indigo-100 text-indigo-800',
+  'TED Talk': 'bg-pink-100 text-pink-800',
+  'Conference': 'bg-amber-100 text-amber-800',
+  'Foundation': 'bg-accent-100 text-accent-800',
+  'BioKnee': 'bg-emerald-100 text-emerald-800'
+};
+---
+
+<Layout title="Video Library">
+  <!-- Hero -->
+  <section class="bg-stone-900 text-white py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <p class="text-accent-400 font-medium uppercase tracking-wider text-sm mb-4">
+        Educational Resources
+      </p>
+      <h1 class="font-display text-display-md md:text-display-lg text-white mb-6">
+        Video Library
+      </h1>
+      <p class="text-xl text-stone-300 leading-relaxed">
+        Explore our comprehensive collection of surgical techniques, educational content, 
+        research presentations, and patient stories from over 30 years of pioneering 
+        biologic joint repair.
+      </p>
+    </div>
+  </section>
+
+  <!-- Quick Stats -->
+  <section class="bg-stone-800 py-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div>
+          <p class="text-3xl font-display text-white mb-1">22</p>
+          <p class="text-stone-400 text-sm">Videos</p>
+        </div>
+        <div>
+          <p class="text-3xl font-display text-white mb-1">4</p>
+          <p class="text-stone-400 text-sm">Categories</p>
+        </div>
+        <div>
+          <p class="text-3xl font-display text-white mb-1">30+</p>
+          <p class="text-stone-400 text-sm">Years of Research</p>
+        </div>
+        <div>
+          <p class="text-3xl font-display text-white mb-1">1</p>
+          <p class="text-stone-400 text-sm">TED Talk</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Category Navigation -->
+  <section class="sticky top-16 z-40 bg-white border-b border-stone-200 py-4">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-wrap gap-3 justify-center">
+        <a href="#surgical-techniques" class="px-4 py-2 text-sm font-medium text-stone-600 hover:text-stone-900 hover:bg-stone-100 rounded-full transition-colors">
+          Surgical Techniques
+        </a>
+        {videoCategories.map((cat) => (
+          <a href={`#${cat.id}`} class="px-4 py-2 text-sm font-medium text-stone-600 hover:text-stone-900 hover:bg-stone-100 rounded-full transition-colors">
+            {cat.title}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Surgical Techniques Section -->
+  <section id="surgical-techniques" class="py-16 border-b border-stone-200">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="mb-10">
+        <h2 class="font-display text-display-sm text-stone-900 mb-3">Surgical Techniques</h2>
+        <p class="text-stone-600 max-w-2xl">Detailed procedural videos demonstrating Dr. Stone's innovative techniques with embedded Vimeo players and full transcripts.</p>
+      </div>
+      
+      <VideoAccordion client:load />
+    </div>
+  </section>
+
+  <!-- Video Categories -->
+  {videoCategories.map((category) => (
+    <section id={category.id} class="py-16 border-b border-stone-200 last:border-0">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="mb-10">
+          <h2 class="font-display text-display-sm text-stone-900 mb-3">{category.title}</h2>
+          <p class="text-stone-600 max-w-2xl">{category.description}</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {category.videos.map((video) => (
+            <a 
+              href={video.platform === 'vimeo' ? `https://vimeo.com/${video.videoId}` : `https://www.youtube.com/watch?v=${video.videoId}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="bg-white border border-stone-200 rounded-sm hover:shadow-lg transition-shadow group block"
+            >
+              <div class="aspect-video bg-stone-900 relative overflow-hidden">
+                {video.platform === 'youtube' ? (
+                  <img 
+                    src={`https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg`}
+                    alt={video.title}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                ) : (
+                  <div class="w-full h-full bg-gradient-to-br from-stone-800 to-stone-900 flex items-center justify-center">
+                    <span class="text-stone-500 text-sm">Vimeo</span>
+                  </div>
+                )}
+                <div class="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                  <div class="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                    <svg class="w-6 h-6 text-stone-900 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="absolute bottom-2 right-2 bg-black/80 text-white text-xs px-2 py-1 rounded">
+                  {video.duration}
+                </div>
+                <div class="absolute top-2 left-2">
+                  <span class={`text-xs px-2 py-1 rounded-full ${categoryColors[video.category] || 'bg-stone-100 text-stone-800'}`}>
+                    {video.category}
+                  </span>
+                </div>
+              </div>
+              <div class="p-5">
+                <h3 class="font-display text-lg text-stone-900 mb-2 group-hover:text-accent-600 transition-colors">
+                  {video.title}
+                </h3>
+                <p class="text-sm text-stone-600 leading-relaxed mb-3">
+                  {video.description}
+                </p>
+                {video.transcriptPage && (
+                  <span class="text-xs text-emerald-600 font-medium">
+                    Full transcript available →
+                  </span>
+                )}
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- Transcripts Section -->
+  <section class="py-16 bg-stone-50">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="font-display text-display-sm text-stone-900 mb-4">Full Transcripts Available</h2>
+      <p class="text-stone-600 mb-8">
+        All videos include complete transcripts for accessibility and reference. 
+        Our content spans surgical techniques, patient education, and cutting-edge research.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/research" class="btn-primary">Explore Research</a>
+        <a href="/techniques" class="btn-secondary">Surgical Techniques</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-accent-500 text-white py-14">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="font-display text-display-sm text-white mb-4">
+        Support Our Research
+      </h2>
+      <p class="text-lg text-accent-100 mb-8">
+        Help us continue developing innovative treatments that keep people active for life.
+      </p>
+      <a href="https://stoneresearch.org/donate" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-accent-600 font-medium hover:bg-accent-50 transition-colors">
+        Make a Gift Today
+      </a>
+    </div>
+  </section>
+</Layout>

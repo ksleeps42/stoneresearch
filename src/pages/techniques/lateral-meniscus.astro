@@ -1,0 +1,112 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const video = {
+  title: 'Lateral Meniscus Allograft Transplantation',
+  vimeoId: '663167891',
+  category: 'Knee Procedures',
+  duration: '6:45',
+  surgeon: 'Kevin R. Stone, MD',
+  year: '2014',
+  location: 'San Francisco, CA'
+};
+---
+
+<Layout title={video.title}>
+  <section class="bg-stone-900 text-white py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <a href="/techniques" class="inline-flex items-center gap-2 text-stone-400 hover:text-white text-sm mb-6 transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+        Back to Surgical Techniques
+      </a>
+      <div class="flex items-center gap-3 mb-4">
+        <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-sm font-medium rounded-full">{video.category}</span>
+        <span class="text-stone-500">•</span>
+        <span class="text-stone-400 text-sm">{video.duration}</span>
+      </div>
+      <h1 class="font-display text-display-sm md:text-display-md text-white mb-4">{video.title}</h1>
+      <p class="text-stone-400">Performed by {video.surgeon} · {video.year} · {video.location}</p>
+    </div>
+  </section>
+
+  <section class="bg-stone-800 py-8">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="aspect-video relative rounded-sm overflow-hidden bg-stone-900">
+        <iframe src={`https://player.vimeo.com/video/${video.vimeoId}?h=0&title=0&byline=0&portrait=0`} class="absolute inset-0 w-full h-full" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-12">
+        <div class="md:col-span-1">
+          <div class="sticky top-24">
+            <h3 class="font-display text-lg text-stone-900 mb-4">Quick Facts</h3>
+            <dl class="space-y-4 text-sm">
+              <div><dt class="text-stone-500">Procedure Type</dt><dd class="font-medium text-stone-900">Meniscus Transplantation</dd></div>
+              <div><dt class="text-stone-500">Graft Type</dt><dd class="font-medium text-stone-900">Donor Allograft</dd></div>
+              <div><dt class="text-stone-500">Technique</dt><dd class="font-medium text-stone-900">Three-Tunnel Arthroscopic</dd></div>
+              <div><dt class="text-stone-500">Setting</dt><dd class="font-medium text-stone-900">Outpatient</dd></div>
+            </dl>
+            <div class="mt-8 pt-8 border-t border-stone-200">
+              <a href="/research/meniscus" class="text-sm text-emerald-600 hover:text-emerald-700 flex items-center gap-1">
+                View Meniscus Studies
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:col-span-2">
+          <h2 class="font-display text-2xl text-stone-900 mb-6">Summary</h2>
+          <div class="prose prose-stone max-w-none mb-12">
+            <p>Lateral meniscus replacement in the arthritic knee presents unique challenges. Rough surfaces can abrade the new meniscus implant, yet patients with damaged surfaces are the ones who benefit most from having a new lateral meniscus.</p>
+            <h3>Surgical Steps</h3>
+            <p>The procedure begins with examination and cleanup of the joint. The torn remnant of the lateral meniscus is debrided back to a stable base, preserving as much rim as possible to prevent subluxation. After trimming the inner portions, a needle is used to create a bleeding bed in the meniscal rim, bringing in new blood supply using a "sewing machine" motion.</p>
+          </div>
+
+          <h2 class="font-display text-2xl text-stone-900 mb-6">Transcript</h2>
+          <div class="bg-stone-50 rounded-sm p-6 md:p-8">
+            <div class="prose prose-stone prose-sm max-w-none">
+              <p class="text-stone-500 italic mb-4">[00:05]</p>
+              <p>Lateral meniscus replacement in the arthritic knee presents some unusual challenges. First of all, the rough surfaces can abrade the new meniscus implant. However, patients with rough surfaces are just the ones who benefit from having a new lateral meniscus. The steps involved are first examination and cleanup of the joint. Next, the torn remnant of the lateral meniscus is debrided back to a stable base, taking care to preserve as much of the rim as possible in order to prevent lateral meniscus subluxation. After trimming the inner portions of the remnant lateral meniscus, a needle brought through a guide is used to bloody the meniscal rim and bring in a new blood supply. The needle is used in a singer sewing machine type motion in order to create bleeding into the lateral meniscus rim. Next, the trough for the bone block of the lateral meniscus is identified and marked from anterior to posterior along the pathway of the ACL.</p>
+              
+              <p class="text-stone-500 italic mb-4 mt-6">[01:14]</p>
+              <p>After marking the path, a five millimeter burr is used in order to create the trough. Care is taken to pass the burr from anterior to posterior and not penetrate through the posterior capsule. It's very important that the depth of this trough exceed the height of the bone block on the meniscus so that the bone block sits into the trough in a stable fashion. We check with a curette to make sure that the trough extends all the way posteriorly so that the bone block is not artificially positioned too anterior in the joint. A customized meniscus transplantation guide that has a spoon on its tip to capture the guide pin is passed into the anterior lateral portal and into the trough. A guide pin is passed out to the tip of the spoon and then over drilled with a 4.5 millimeter cannulated drill. A curette is used to capture the tip of the guide pin and drill so that it does not pass into the posterior structures. A suture passer is passed up the guide pin and the suture exits the anterior lateral portal, and the step is again repeated at the anterior aspect of the trough, and then again at the posterior one quarter of the tibial plateau just posterior to the popliteus. Each of these sutures are brought out the anterior lateral portal, which is slightly widened in order to prevent tissue capture of the sutures.</p>
+              
+              <p class="text-stone-500 italic mb-4 mt-6">[02:56]</p>
+              <p>Attention is then turned to the cadaveric lateral meniscus, which comes either on a half bone block or a full block. The peripheral attachments are divided taking care to preserve the synovial and ligamentous attachments on the side of the meniscus cartilage itself. The width of the bone block is then identified and marked with an oscillating saw usually about five millimeters in width. The bone block is then cut free from the tibial plateau and then sized to fit in the trough. A suture loop of permanent suture is then passed around the bone block anteriorly, posteriorly, and at the posterior one quarter. Wall and back lines are marked on the bottom of the meniscus in order to help determine the top and the bottom when inserting the meniscus itself. The previously placed suture loops through the three tunnels are then looped around the sutures placed on the meniscus allograft.</p>
+              
+              <p class="text-stone-500 italic mb-4 mt-6">[03:54]</p>
+              <p>The anterior lateral portal is slightly widened in order to permit passage of the bone block in one step. The meniscus transplant is then pushed through the relatively small hole at the anterior lateral aspect of the knee that permits meniscus transplantation. Once pushed into the knee, the bone block is pushed down into the trough by using an arthroscopic obturator. The knee can then be extended further embedding the bone block into the trough. The sutures are then secured on the external aspect of the tibia and inside out meniscus suturing technique is then used with the sutures exiting the posterior lateral aspect of the knee through small percutaneous punctures. We no longer make open posterior medial or posterior lateral incisions as we've found the risk of nerve entrapment is reduced when we use small percutaneous sticks. Care is clearly taken to exit these sutures anterior to the fibula and to protect the peroneal nerve.</p>
+              
+              <p class="text-stone-500 italic mb-4 mt-6">[04:57]</p>
+              <p>Once the sutures are tied, the sutures have been passed on the inferior and superior surface of the lateral meniscus transplant. Next, a Casper suture punch is used to fix the anterior one-quarter of the meniscus to the anterior capsule. A final check of the meniscus position within the knee is made to ensure that the meniscus is secured throughout and then the patient is returned to the postoperative recovery room. It should be noted that if treatment of the articular cartilage is performed at the same time for the arthritic knee, the paste grafting of the articular cartilage is then performed after the meniscus transplant has been placed. Marking is instilled in the knee, closure undertaken, and the patient returned to the post-op recovery room.</p>
+              
+              <p class="text-stone-500 italic mb-4 mt-6">[06:05]</p>
+              <p>The postoperative program for lateral meniscus transplantation focuses on a straight leg brace for four weeks with touchdown to partial weight bearing. Since the lateral meniscus transplant is stable in full extension, daily exercises and out of brace range of motion is carried out multiple times a day from zero to 90 degrees. Trunk stabilization exercises, upper body workouts, and well legged bicycle are all initiated on the first day postoperatively. A coordinated rehabilitation and training program is essential for returning the patient to full sports. Sports other than swimming and cycling and weightlifting are generally deferred until after four months. Patients are encouraged not to go into deflection past 90 degrees except with physical therapy for the first three to four months. Patients with lateral meniscus transplants even in the arthritic knee have been successful at returning to full sports since the meniscus transplant seems to provide an excellent shock absorber for the joint.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-stone-100 py-8">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="flex justify-between items-center">
+        <a href="/techniques/paste-graft" class="text-stone-600 hover:text-stone-900 inline-flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          Paste Graft
+        </a>
+        <a href="/techniques/medial-meniscus" class="text-emerald-600 hover:text-emerald-700 inline-flex items-center gap-2">
+          Next: Medial Meniscus
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

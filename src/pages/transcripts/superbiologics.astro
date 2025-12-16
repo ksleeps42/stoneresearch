@@ -1,0 +1,169 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const transcript = {
+  title: 'Superbiologics: The Future of Joint Repair',
+  subtitle: 'Novel Cells, Growth Factors, and Cross-Species Tissue Engineering',
+  category: 'Research',
+  duration: '2:00',
+  relatedResearch: '/research/anabolic-therapies',
+  relatedVideo: '/videos#educational',
+};
+---
+
+<Layout title={transcript.title + " - Transcript"}>
+  <!-- Header -->
+  <section class="bg-stone-900 text-white py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <a href="/transcripts" class="inline-flex items-center gap-2 text-stone-400 hover:text-white text-sm mb-6 transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+        All Transcripts
+      </a>
+      
+      <div class="flex items-center gap-3 mb-4">
+        <span class="text-xs px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full">{transcript.category}</span>
+        <span class="text-stone-400 text-sm">{transcript.duration}</span>
+      </div>
+      
+      <h1 class="font-display text-display-sm md:text-display-md text-white mb-3">
+        {transcript.title}
+      </h1>
+      <p class="text-lg text-stone-300">{transcript.subtitle}</p>
+    </div>
+  </section>
+
+  <!-- Transcript Content -->
+  <section class="py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="prose prose-stone max-w-none">
+        <div class="bg-stone-50 border-l-4 border-purple-500 p-6 mb-8 not-prose">
+          <p class="text-sm text-stone-600">
+            <strong class="text-stone-900">The Vision:</strong> Moving beyond simple tissue replacement to 
+            "super biologic enhancements" that combine the best of stem cells, growth factors, and even 
+            cross-species tissue engineering to create superior replacement solutions.
+          </p>
+        </div>
+
+        <h2 class="font-display text-xl text-stone-900 mb-4">Full Transcript</h2>
+        
+        <div class="space-y-6 text-stone-700 leading-relaxed">
+          <p class="timestamp-text">
+            <span class="timestamp">[00:00]</span>
+            We are all aware of the risk of cancer, but there's another disease that's destined to affect 
+            even more of us: arthritis. Cancer may kill you, but when you look at the numbers, arthritis 
+            ruins more lives.
+          </p>
+          
+          <p>
+            Assuming you live a long life, there's a 50% chance you'll develop arthritis, and it's not 
+            just aging that causes arthritis. Common injuries can lead to decades of pain until our joints 
+            quite literally grind to a halt.
+          </p>
+          
+          <div class="bg-purple-50 border border-purple-200 p-5 rounded-sm my-6 not-prose">
+            <p class="text-stone-800 font-medium mb-2">The Statistics</p>
+            <p class="text-stone-600 text-sm">
+              <strong>50% of people</strong> who live a long life will develop arthritis. Injuries sustained 
+              in youth can lead to decades of progressive joint damage.
+            </p>
+          </div>
+          
+          <p>
+            Desperate for a solution, we've turned to engineering to design artificial components to replace 
+            our worn out body parts. But in the midst of a modern buzz around the promises of a bionic body, 
+            shouldn't we stop and ask if there's a better, more natural way?
+          </p>
+          
+          <p class="timestamp-text">
+            <span class="timestamp">[00:45]</span>
+            Let's consider an alternative path. What if all the replacements our bodies need already exist 
+            in nature or within our own stem cells?
+          </p>
+          
+          <p>
+            This is the field of biologic replacements where we replace worn out parts with new natural ones. 
+            For instance, in your worn out knee, we create new cartilage using a paste graft of your own 
+            stem cells, and replace the meniscus and ligaments with ones from a donor.
+          </p>
+          
+          <p class="timestamp-text">
+            <span class="timestamp">[01:10]</span>
+            We are now moving into <strong>super biologic enhancements</strong> where we add novel cells 
+            and growth factors to the biologic replacement tissues.
+          </p>
+          
+          <p>
+            And our options extend beyond human tissue. By treating animal tissue and seamlessly integrating 
+            the best elements of the animal kingdom into our human anatomy, we create super biologic 
+            replacement solutions and merge the best of evolution from different species.
+          </p>
+        </div>
+
+        <!-- Key Concepts -->
+        <div class="mt-10 not-prose">
+          <h3 class="font-display text-lg text-stone-900 mb-6">The Superbiologics Framework</h3>
+          
+          <div class="space-y-4">
+            <div class="flex gap-4 p-5 bg-stone-50 border border-stone-200 rounded-sm">
+              <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                <span class="text-purple-600 font-bold">1</span>
+              </div>
+              <div>
+                <h4 class="font-medium text-stone-900 mb-1">Biologic Replacements</h4>
+                <p class="text-sm text-stone-600">Replace worn parts with natural tissues—paste grafts from your 
+                own cells, donor meniscus and ligaments.</p>
+              </div>
+            </div>
+            
+            <div class="flex gap-4 p-5 bg-stone-50 border border-stone-200 rounded-sm">
+              <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                <span class="text-purple-600 font-bold">2</span>
+              </div>
+              <div>
+                <h4 class="font-medium text-stone-900 mb-1">Super Biologic Enhancements</h4>
+                <p class="text-sm text-stone-600">Add novel cells and growth factors to biologic tissues to 
+                enhance healing and integration.</p>
+              </div>
+            </div>
+            
+            <div class="flex gap-4 p-5 bg-stone-50 border border-stone-200 rounded-sm">
+              <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                <span class="text-purple-600 font-bold">3</span>
+              </div>
+              <div>
+                <h4 class="font-medium text-stone-900 mb-1">Cross-Species Integration</h4>
+                <p class="text-sm text-stone-600">Treat and integrate animal tissues to merge the best 
+                evolutionary solutions from different species.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Links -->
+  <section class="py-12 bg-stone-50 border-t border-stone-200">
+    <div class="max-w-4xl mx-auto px-6">
+      <h3 class="font-display text-lg text-stone-900 mb-6">Related Content</h3>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href={transcript.relatedResearch} class="p-5 bg-white border border-stone-200 rounded-sm hover:border-purple-400 transition-colors group">
+          <span class="text-xs text-purple-600 uppercase tracking-wider">Research</span>
+          <p class="font-display text-stone-900 group-hover:text-purple-600 transition-colors mt-1">Anabolic Therapies Studies</p>
+        </a>
+        <a href={transcript.relatedVideo} class="p-5 bg-white border border-stone-200 rounded-sm hover:border-purple-400 transition-colors group">
+          <span class="text-xs text-purple-600 uppercase tracking-wider">Video</span>
+          <p class="font-display text-stone-900 group-hover:text-purple-600 transition-colors mt-1">Watch Full Video</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .timestamp {
+    @apply text-xs font-mono text-purple-600 bg-purple-50 px-2 py-0.5 rounded mr-2;
+  }
+</style>

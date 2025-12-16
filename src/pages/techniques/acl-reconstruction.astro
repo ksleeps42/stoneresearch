@@ -1,0 +1,186 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const video = {
+  title: 'Allograft ACL Reconstruction Surgery',
+  vimeoId: '663177757',
+  category: 'Knee Procedures',
+  duration: '9:18',
+  surgeon: 'Kevin R. Stone, MD',
+  year: '2014',
+  location: 'San Francisco, CA'
+};
+---
+
+<Layout title={video.title}>
+  <!-- Hero -->
+  <section class="bg-stone-900 text-white py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <a href="/techniques" class="inline-flex items-center gap-2 text-stone-400 hover:text-white text-sm mb-6 transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+        Back to Surgical Techniques
+      </a>
+      
+      <div class="flex items-center gap-3 mb-4">
+        <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-sm font-medium rounded-full">
+          {video.category}
+        </span>
+        <span class="text-stone-500">•</span>
+        <span class="text-stone-400 text-sm">{video.duration}</span>
+      </div>
+      
+      <h1 class="font-display text-display-sm md:text-display-md text-white mb-4">
+        {video.title}
+      </h1>
+      
+      <p class="text-stone-400">
+        Performed by {video.surgeon} · {video.year} · {video.location}
+      </p>
+    </div>
+  </section>
+
+  <!-- Video Player -->
+  <section class="bg-stone-800 py-8">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="aspect-video relative rounded-sm overflow-hidden bg-stone-900">
+        <iframe 
+          src={`https://player.vimeo.com/video/${video.vimeoId}?h=0&title=0&byline=0&portrait=0`}
+          class="absolute inset-0 w-full h-full"
+          frameborder="0" 
+          allow="autoplay; fullscreen; picture-in-picture" 
+          allowfullscreen
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Summary & Transcript -->
+  <section class="py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-12">
+        <!-- Sidebar -->
+        <div class="md:col-span-1">
+          <div class="sticky top-24">
+            <h3 class="font-display text-lg text-stone-900 mb-4">Quick Facts</h3>
+            <dl class="space-y-4 text-sm">
+              <div>
+                <dt class="text-stone-500">Procedure Type</dt>
+                <dd class="font-medium text-stone-900">ACL Reconstruction</dd>
+              </div>
+              <div>
+                <dt class="text-stone-500">Graft Type</dt>
+                <dd class="font-medium text-stone-900">Quadriceps Tendon Allograft</dd>
+              </div>
+              <div>
+                <dt class="text-stone-500">Technique</dt>
+                <dd class="font-medium text-stone-900">Three-Portal Arthroscopic</dd>
+              </div>
+              <div>
+                <dt class="text-stone-500">Anesthesia</dt>
+                <dd class="font-medium text-stone-900">General or Regional</dd>
+              </div>
+            </dl>
+            
+            <div class="mt-8 pt-8 border-t border-stone-200">
+              <h4 class="font-medium text-stone-900 mb-3">Related Research</h4>
+              <a href="/research/ligaments" class="text-sm text-emerald-600 hover:text-emerald-700 flex items-center gap-1">
+                View ACL Studies
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="md:col-span-2">
+          <h2 class="font-display text-2xl text-stone-900 mb-6">Summary</h2>
+          
+          <div class="prose prose-stone max-w-none mb-12">
+            <p>
+              This video demonstrates Dr. Stone's technique for ACL reconstruction using a quadriceps 
+              tendon allograft. The procedure utilizes a three-portal arthroscopic approach that 
+              minimizes surgical trauma while ensuring precise anatomic graft placement.
+            </p>
+            
+            <h3>Key Surgical Steps</h3>
+            <p>
+              After arthroscopic treatment of any associated injuries (meniscus tears, cartilage 
+              lesions), the intercondylar notch is carefully prepared with excellent visualization 
+              of both tibial and femoral ACL insertion sites. Notchplasty is performed only when 
+              necessary for visualization or in cases of a tight intercondylar notch.
+            </p>
+            <p>
+              The rear-entry guide is positioned through the anterior medial portal, exiting 
+              posterolaterally at the level of the iliotibial band. Guide pins are placed 
+              anatomically, tunnels are drilled, and the allograft is passed and secured with 
+              interference fixation.
+            </p>
+
+            <h3>Advantages of Allograft</h3>
+            <p>
+              The use of quadriceps tendon allograft avoids the morbidity of autograft harvest, 
+              including anterior knee pain, weakness, and the additional surgical time required 
+              for graft harvesting. Quadriceps tendon is significantly thicker and stronger than 
+              other commonly used allograft tissues.
+            </p>
+          </div>
+
+          <h2 class="font-display text-2xl text-stone-900 mb-6">Transcript</h2>
+          
+          <div class="bg-stone-50 rounded-sm p-6 md:p-8">
+            <div class="prose prose-stone prose-sm max-w-none">
+              <p class="text-stone-500 italic mb-4">[00:05]</p>
+              <p>
+                Our technique of ACL reconstruction involves what we call a three portal technique after arthroscopic treatment of other problems within the knee, such as treatment of articular cartilage defects, torn meniscus cartilages, the ACL is approached by first cleaning out the intercondylar notch, taking care to obtain excellent visualization of the ACL insertion sites on the tibia and on the femur wall. Notch plasty is performed only if necessary to improve visualization or if there is a particularly tight intercondylar notch. Once the notch is cleared, a gaff is passed from the anterior medial portal exiting posterior laterally at the level of the iliotibial band. A small puncture wound is made over the tip of the gaff through the skin. The rear entry guide is hooked on to the small puncture wound and brought into the knee with the tip being placed at the anatomic insertion site of the ACL, which we believe is somewhat lower down the wall than previously thought.
+              </p>
+              
+              <p class="text-stone-500 italic mb-4 mt-6">[01:14]</p>
+              <p>
+                Usually at around the three or nine o'clock position care is taken to ensure that the tip of the guide and the subsequent guide pin exit within a few millimeters of the posterior margin of the intercondylar notch. A small portal measuring approximately one and a half centimeters is made to permit the 11 millimeter drill bit to be passed over the guide pin. In smaller knees, a 10 millimeter drill bit can be used. A curette is used to capture the guide pin and to clean the remaining tissue. A flexible suture passer is then passed through the drilled hole and exits anterior medially. A triangular poodoo guide is then placed into the knee at the anatomic insertion site for the ACL seven millimeters anterior to the PCL and biased towards the medial side of the ACL insertion. A drill pin is then passed to the tip of the guide. The drill pin is then over drilled with an 11 millimeter drill or a 10 millimeter drill for smaller knees. After the drill has been passed, care is taken to ensure that the knee can terminally extend and that the drill does not impinge on the PCL. The guide suture is captured and brought down through the tibial drill hole.
+              </p>
+              
+              <p class="text-stone-500 italic mb-4 mt-6">[02:48]</p>
+              <p>
+                Attention is then turned to the ACL allograft. We prefer a re-shaped bone patella tendon bone allograft that has been washed with one of the cleaning techniques such as bio cleanse or allo wash. The cleaning techniques produce a bacteria clean graft, although there still is some risk for viral transmission. Drill holes are placed in each bone block to permit two permanent sutures placed on each end. A plastic ligament passer may be used and passed from the tibia to the femur after the holes have been chamfered free with a shaver or a Gore-Tex chafer. Next, the ligament is passed from the femur to the tibia and clamped in order to prevent pull through of the ligament into the knee. The femoral hole is then clearly visualized and a guide pin passed on the anterior portion between the bone block and the tunnel. This area is then tapped and over drilled with a resorbable screw.
+              </p>
+              
+              <p class="text-stone-500 italic mb-4 mt-6">[03:59]</p>
+              <p>
+                The fixation is visualized with the arthroscope in the tunnel in order to ensure accurate placement and no protrusion. The knee is then cycled for 20 cycles to remove stretch in the graft, and similar fixation performed on the tibial side with the knee held in 30 degrees and posterior subluxation in order to remove any slack from the graft. Tension is then checked again at 30 degrees. The knee is taken through a full range of motion and then it's arthroscopically checked in order to ensure that there's no impingement on either the PCL or the intercondylar notch. Any excess remaining tissue is removed and the marking instilled and the patient returned to the post-op recovery room.
+              </p>
+              
+              <p class="text-stone-500 italic mb-4 mt-6">[04:45]</p>
+              <p>
+                It should be noted that in our post-op program, full weight bearing and range of motion is permitted immediately. The first six weeks focus on regaining range of motion, balance and proprioception, followed by regaining strength. A complete body training program focusing on trunk balance, proprioception, coordination and fitness is undertaken starting on day one postoperatively. A knee brace may or may not be used depending on the patient's sense of stability and coordination. The patient is returned to full sports when they can demonstrate excellence in each of the fitness tests, as well as return of quad girth and strength.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Navigation -->
+  <section class="bg-stone-100 py-8">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="flex justify-between items-center">
+        <a href="/techniques" class="text-stone-600 hover:text-stone-900 inline-flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+          All Techniques
+        </a>
+        <a href="/techniques/paste-graft" class="text-emerald-600 hover:text-emerald-700 inline-flex items-center gap-2">
+          Next: Paste Graft
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
